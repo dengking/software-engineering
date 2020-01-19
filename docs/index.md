@@ -15,3 +15,30 @@
 - [CPython](https://github.com/python/cpython)
 - [Redis](https://github.com/antirez/redis/)
 
+
+
+
+
+### 工程需要考虑的问题
+
+#### [Software configuration management](https://en.wikipedia.org/wiki/Software_configuration_management)
+
+在软件公司，一般都会有配管的角色。
+
+##### version control 
+
+可以使用的工具：
+
+[git](https://git-scm.com/)
+
+svn
+
+#### build
+
+
+
+#### style
+
+正如python有：
+
+[PEP 7 -- Style Guide for C Code](https://www.python.org/dev/peps/pep-0007/)
