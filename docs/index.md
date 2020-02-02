@@ -1,12 +1,16 @@
 # software engineering
 
-## 编写可以发现问题的代码
+作为一名软件工程师，我们会参与到一个一个的软件项目的开发中，在这些项目中我们所扮演的角色为[**开发者**](https://en.wikipedia.org/wiki/Programmer)（**programmer**/**developer**/**coder**），其实对于一个大型的软件项目而言，**开发过程**只是其中一个环节而已，对于大型项目而言，它还涉及到一些列问题，如：
 
-对于一些错误情况，程序员需要能够提前断言，然后将这些断言编码到程序中，当此断言成真，即程序进入到了这个分支，需要使用适当的方式通知，不同的编程语言提供了不同的通知方式：
+- 如何来管理一个大型项目？
+- 团队如何协作开发？
+- 如何保证软件质量？
 
-- python可以raise Exception
+当我们开始思考这些问题的时候，其实已经开始了以管理者的角度来看待问题，这些问题，这是[Software engineering](https://en.wikipedia.org/wiki/Software_engineering)学科所研究的。
 
-关于断言，参见：https://en.wikipedia.org/wiki/Assertion_(software_development)
+本项目就是为了梳理[Software engineering](https://en.wikipedia.org/wiki/Software_engineering)学科而创建的，除此之外，它还结合了我的一些实践经验。
+
+
 
 ## 管理大工程
 
@@ -19,38 +23,4 @@
 
 
 
-### 工程需要考虑的问题
 
-#### [Software configuration management](https://en.wikipedia.org/wiki/Software_configuration_management)
-
-在软件公司，一般都会有配管的角色。
-
-##### version control 
-
-可以使用的工具：
-
-[git](https://git-scm.com/)
-
-svn
-
-##### build
-
-
-
-#### code style
-
-正如python有：
-
-[PEP 7 -- Style Guide for C Code](https://www.python.org/dev/peps/pep-0007/)
-
-
-
-#### 设计
-
-系统的interface，比如python，redis等软件，都有着非常好的interface，包括：
-
-- command line interface
-- api
-- configuration
-
-无论是cpython还是redis，都提供了非常好的interface来探索其内部。

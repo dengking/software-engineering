@@ -1,0 +1,8 @@
+nav:
+    - Introduction: index.md
+    - Software-development: wikipedia-Software-development.md
+    - Software-configuration-management: Software-configuration-management
+    - Software-build: Software-build
+    - Software-testing: Software-testing
+    - Software-quality-assurance: Software-quality-assurance
+    
