@@ -1,4 +1,4 @@
-# software engineering
+# Software engineering
 
 作为一名软件工程师，我们会参与到一个一个的软件项目的开发中，在这些项目中我们所扮演的角色为[**开发者**](https://en.wikipedia.org/wiki/Programmer)（**programmer**/**developer**/**coder**），其实对于一个大型的软件项目而言，**开发过程**只是其中一个环节而已，对于大型项目而言，它还涉及到一些列问题，如：
 

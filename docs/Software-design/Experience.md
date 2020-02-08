@@ -8,6 +8,3 @@
 
 无论是cpython还是redis，都提供了非常好的interface来探索其内部。
 
-
-
-# 
