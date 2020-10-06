@@ -1,4 +1,5 @@
 nav:
     - Introduction: index.md
     - Plugin-architecture: Plugin-architecture
+    - Event-driven-model: Event-driven-model
     - Monolithic-and-micro: Monolithic-and-micro
