@@ -61,9 +61,11 @@ TODO: 需要补充一些具体例子。
 
 Event-driven programming告诉我们如何实现event-driven model。
 
-### Event-driven programming中需要考虑的一些问题
+### Implementation 中需要考虑的一些问题
 
+#### IoC
 
+非常适合使用IoC，参见`Software-design\Control-theory\Inversion-of-control`章节。
 
 #### Monitor：如何进行持续监控
 

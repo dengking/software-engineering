@@ -1,8 +1,12 @@
 # Inversion of control
 
+## IoC是一种思想
+
 “inversion of control”即“控制反转”。IoC是一种思想（或者说 理念），IoC的实现有多种方式，很多framework中都采用了IoC的思想或受到IoC的影响。正如在tutorialsteacher [Inversion of Control](https://www.tutorialsteacher.com/ioc/inversion-of-control)中所总结的
 
 > IoC is a principle, not a pattern. It just gives high-level design guidelines but does not give implementation details. You are free to implement the IoC principle the way you want.
+
+## What is IoC?
 
 关于它的第一个问题就是“what aspect of control are they inverting”，即“反转的是什么控制”，这个问题需要结合具体的例子来进行回答，本章基于如下文章：
 
@@ -12,33 +16,51 @@
 
 
 
-inversion of control中的control是一个含义非常宽泛的词语，维基百科给出的解释是 [Control flow](https://en.wikipedia.org/wiki/Control_flow)，我觉得这个解释是比较狭隘的，从广义而言，它可以指代：flow of control、dependency的注入、对object lifetime的管理，event和event handler之间的映射，显然这些都是control，如果我们从这个宽泛的角度出发来理解的话，就会发现软件工程领域的很多内容都可以归入到inversion of control中。原本这些control是由programmer来进行实现，而inversion of control则启发我们：这些control应该由framework来进行实现；此处的framework的含义也是非常宽泛的，它可以是类似于spring的container，也可以是类似于reference counting这样的逻辑，显然IOC可以简单地总结为：
+IoC中的control是一个含义非常宽泛的词语，维基百科给出的解释是 [Control flow](https://en.wikipedia.org/wiki/Control_flow)，我觉得这个解释是比较狭隘的，从广义而言，它可以指代：
 
-非IOC:由programmer来实现control
+1) flow of control
 
-IOC:由framework来实现control
+2) dependency的注入
+
+3) 对object lifetime的管理
+
+4) event和event handler之间的映射
+
+.....
+
+显然这些都是control，如果我们从这个宽泛的角度出发来理解的话，就会发现软件工程领域的很多内容都可以归入到IoC中。原本这些control是由programmer来进行实现，而IoC则启发我们：这些control应该由framework来进行实现，即将**控制权**移交给**framework**；此处的framework的含义也是非常宽泛的，它可以是类似于spring的container，也可以是类似于reference counting这样的逻辑，显然IOC可以简单地总结为：
+
+非IOC: 由programmer来实现control
+
+IOC: 由framework来实现control
+
+### Examples
+
+相对于manual memory management而言，GC是一种IoC: 由GC来管理object的lifetime;
+
+相对于row pointer而言，smart pointer是一种IoC：`shared_ptr`由reference count来管理object的lifetime，`unique_ptr`则是scope;
+
+DI(dependence injection)是一种IoC，由frameworker来管理dependence关系;
+
+Event-driven model是一种IoC，由framework来管理event和event handler之间的映射关系，参见`Software-design\Architecture\Event-driven-model`;
 
 
 
-gc是一种Ioc，有gc来管理object的lifetime
-
-smart pointer是一种IOC：Shared_ptr由reference count来管理object的lifetime，unique_ptr则是scope
-
-dependence injection是一种ioc，由frameworker来管理dependence关系。
-
-reactive programming是一种ioc，由framework来管理event和event handler之间的映射关系。
 
 
+## IoC的优势/价值
 
-inversion of control的思想内涵；
+framework实现了原本由programmer来实现的control，这样就减轻了用户的负担；这样做的优势还有很多，比如:
 
-inversion of control的优势/价值；
+1) decouple
 
-inversion of control的实现方式；
+......
+
+## TODO: IoC的实现方式
+
+在维基百科[Inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)中谈到了这个问题。
 
 
-
-需要对每一种都提供一个案例来进行说明。
 
 
 

@@ -2,9 +2,9 @@
 
 本章的标题的含义是：控制论。
 
-control是一个非常抽象的概念，我是在学习[Inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)的时候，开始思考它的。
+control是一个非常抽象的、宽泛的概念，我是在学习[Inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)的时候，开始思考它的，我从“control”概念出发，能够帮助我们理解很多computer science中的问题，更加重要的是：建立起这个概念，能够让我们从更加高的角度来思考我们遇到的问题，在“What is control”中，我们将从“relation”的角度来描述“control”，基于“relation”的描述，能够帮助我们分析复杂的系统中各个角色之间的关系、从而做出更好的设计。
 
-## What is control
+## What is control ? 
 
 语言的迷惑性在于: 同一个词语，有的时候表示的是动词，有的时候表示的名词；“control”这个词语就是这样的:
 
@@ -25,6 +25,12 @@ control是一个非常抽象的概念，我是在学习[Inversion of control](ht
 
 “受控于”。
 
+
+
+## What is control theory ?
+
+本文标题的control theory是我自己创造的一个名词，我仅仅是为了便于后续在其它的文章中引用它。后来Google后才发现: control theory 其实是一门学科，参见 wikipedia [Control theory](https://en.wikipedia.org/wiki/Control_theory)。我不怎么严谨的认为：本文所讨论的control theory其实也是属于专业领域的control theory的。
+
 ### Examples
 
 | example                | explanation                                         |                                                              |
@@ -35,6 +41,34 @@ control是一个非常抽象的概念，我是在学习[Inversion of control](ht
 | Event-driven framework | Framework **控制着** event和event handler之间的映射 | - wikipedia [Event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) <br>- wikipedia [Event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming) |
 
 
+
+
+
+
+
+## 改变control relation
+
+在一个system中，我们往往处于各种原因需要改变control relation，改变control relation意味着**控制权**的移交，下面是一些例子: 
+
+### Dangling pointer
+
+在TCP SDK（网络库，可以认为是一个[Event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture)），一般采 [Publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)、[Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) ；这两种模式的一个共性就是: 将**Listener对象**传入到TCP SDK（网络库），一般是通过pointer、reference的方式进行注册；TCP SDK会network的各种event通过回调**Listener对象**的成员方法通知到应用层，比如将**连接断开**的事件通过调用**Listener对象**的`OnDisconnected`通知到应用层。下面描述了在这种模式下非常容易出现的一个问题:
+
+如果TCP SDK的网络断开是**异步**的，并且不对**Listener对象**的lifetime的进行控制；那么就存在这样的一种可能: **Listener对象**已经被释放了，而TCP SDK并不知晓，依然调用`OnDisconnected`；
+
+则这样就发生了本节标题中描述的dangling pointer错误，导致程序core dump。
+
+对网络连接的断开、object的lifetime不就行**控制**而导致的问题，修正方法是：首先将网络连接关闭（使用阻塞的方法），待关闭完成后（`OnDisconnected`被调用了），再来析构`Listener`对象。
+
+
+
+### IOC
+
+IOC就是典型的改变control relation的例子：将**控制权**移交给framework。将在下一个章节对它进行介绍。
+
+
+
+## draft
 
 控制权，掌控控制权，IOC其实准确地说
 
@@ -51,24 +85,3 @@ reverse of control： dependence injection
 
 有的时候，我们是需要取得控制权的，比如之前的network IO
 
-
-
-## 改变control relation
-
-在一个system中，我们往往处于各种原因需要改变control relation，下面是一些例子: 
-
-### Dangling pointer
-
-在TCP SDK（网络库，可以认为是一个[Event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture)），一般采 [Publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)、[Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) ；这两种模式的一个共性就是: 将**Listener对象**传入到TCP SDK（网络库），一般是通过pointer、reference的方式进行注册；TCP SDK会network的各种event通过回调**Listener对象**的成员方法通知到应用层，比如将**连接断开**的事件通过调用**Listener对象**的`OnDisconnected`通知到应用层。下面描述了在这种模式下非常容易出现的一个问题:
-
-如果TCP SDK的网络断开是**异步**的，并且不对**Listener对象**的lifetime的进行控制；那么就存在这样的一种可能: **Listener对象**已经被释放了，而TCP SDK并不知晓，依然调用`OnDisconnected`；
-
-则这样就发生了本节标题中描述的dangling pointer错误，导致程序core dump。
-
-对网络连接的断开、object的lifetime不就行控制而导致的问题，修正方法是：首先将网络连接关闭（使用阻塞的方法），带关闭完成后（`OnDisconnected`被调用了），再来析构`Listener`对象。
-
-
-
-### IOC
-
-IOC就是典型的改变control relation的例子。将在下一个章节对它进行介绍。

@@ -10,7 +10,7 @@ Inversion of control is used to increase [modularity](https://en.wikipedia.org/w
 
 The term is related to, but different from, the [dependency inversion principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle), which concerns itself with [decoupling dependencies](https://en.wikipedia.org/wiki/Dependency_(computer_science)) between [high-level and low-level](https://en.wikipedia.org/wiki/High-_and_low-level) [layers](https://en.wikipedia.org/wiki/Abstraction_layer) through shared [abstractions](https://en.wikipedia.org/wiki/Abstraction_(computing)). The general concept is also related to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming) in that it is often implemented using IoC, so that the custom code is commonly only concerned with the handling of events, whereas the [event loop](https://en.wikipedia.org/wiki/Event_loop) and dispatch of events/messages is handled by the framework or the runtime environment.
 
-### Overview
+## Overview
 
 As an example, with traditional programming, the [main function](https://en.wikipedia.org/wiki/Main_function) of an application might make function calls into a menu library to display a list of available [commands](https://en.wikipedia.org/wiki/Command_(computing)) and query the user to select one.[[4\]](https://en.wikipedia.org/wiki/Inversion_of_control#cite_note-FowlerDI-4) The library thus would return the chosen option as the value of the function call, and the main function uses this value to execute the associated command. This style was common in [text based interfaces](https://en.wikipedia.org/wiki/Text_based_interface). For example, an [email client](https://en.wikipedia.org/wiki/Email_client) may show a screen with commands to load new mails, answer the current mail, start a new mail, etc., and the program execution would block until the user presses a key to select a command.
 
@@ -27,7 +27,7 @@ Inversion of control serves the following design purposes:
 
 **Inversion of control** is sometimes facetiously referred to as the "Hollywood Principle: Don't call us, we'll call you".
 
-### Description
+## Description
 
 In traditional programming, the [flow](https://en.wikipedia.org/wiki/Control_flow) of the [business logic](https://en.wikipedia.org/wiki/Business_logic) is determined by objects that are [statically bound](https://en.wikipedia.org/wiki/Static_binding) to one another. With inversion of control, the flow depends on the **object graph** that is built up during program execution. Such a dynamic flow is made possible by object interactions that are defined through abstractions. This [run-time binding](https://en.wikipedia.org/wiki/Late_binding) is achieved by mechanisms such as [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) or a [service locator](https://en.wikipedia.org/wiki/Service_locator_pattern). In IoC, the code could also be linked statically during compilation, but finding the code to execute by reading its description from [external configuration](https://en.wikipedia.org/wiki/Configuration_file) instead of with a direct reference in the code itself.
 
@@ -37,7 +37,7 @@ In order for the running program to bind objects to one another, the objects mus
 
 > NOTE:要想实现在[Overview](#Overview)中描述的思想，需要采用上面这段话中描述的实现方式。
 
-### Implementation techniques
+## Implementation techniques
 
 In [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), there are several basic techniques to implement inversion of control. These are:
 
