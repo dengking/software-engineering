@@ -1,1 +1,0 @@
-# [Software design](https://en.wikipedia.org/wiki/Software_design)

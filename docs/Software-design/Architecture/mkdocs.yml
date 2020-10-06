@@ -1,0 +1,4 @@
+nav:
+    - Introduction: index.md
+    - Plugin-architecture: Plugin-architecture
+    - Monolithic-and-micro: Monolithic-and-micro

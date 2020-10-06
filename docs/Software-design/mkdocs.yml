@@ -1,3 +1,5 @@
 nav:
-    - Software-design: Software-design.md
+    - Introduction: index.md
+    - Architecture: Architecture
+    - Control-theory: Control-theory
     - Experience: Experience.md
