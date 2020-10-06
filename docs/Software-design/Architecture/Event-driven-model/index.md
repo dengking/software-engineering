@@ -4,5 +4,5 @@
 
 - [Linux OS kernel is event-driven](https://dengking.github.io/Linux-OS/Kernel/Guide/Linux-OS's-interaction-with-the-hardware/Linux-OS-kernel-is-event-driven/)
 
-本章讨论如何实现event-driven model，这就是[Event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)。
+本章讨论如何实现event-driven model，可以将此看做是一种[Event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming)。
 

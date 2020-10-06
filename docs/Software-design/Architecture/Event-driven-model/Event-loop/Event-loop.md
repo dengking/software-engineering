@@ -83,9 +83,9 @@ An alternative, more portable solution, is to convert **asynchronous events** to
 
 
 
-***SUMMARY*** :参见《the linux program interface 》的 63.5.2 The Self-Pipe Trick
+> NOTE :参见《the linux program interface 》的 63.5.2 The Self-Pipe Trick
 
-## [Is an event loop just a for/while loop with optimized polling?](https://softwareengineering.stackexchange.com/questions/214889/is-an-event-loop-just-a-for-while-loop-with-optimized-polling)
+## softwareengineering [Is an event loop just a for/while loop with optimized polling?](https://softwareengineering.stackexchange.com/questions/214889/is-an-event-loop-just-a-for-while-loop-with-optimized-polling)
 
 > NOTE:看了这么多，发现提问者的最终意图是想要知道event loop是如何实现的，提问者认为event loop的实现方式是类似polling的；根据下面的回答，显然答案是No。答案[A4](#A4)是非常直接的给出了答案；它引用了Wikipedia的上的[Polling](https://en.wikipedia.org/wiki/Polling_(computer_science))文章，在这篇文章中，有下面的一段话：
 >
@@ -166,7 +166,7 @@ I am confused with the statement `Most event loops will block`. How does this fi
 
 If you look at event loops for a library like GTK+, they check for new events then call event handlers in a loop, but if there aren't any events, they block on a semaphore or a timer or something. Individual developers make their own **event loops** that don't block on an empty event queue, but the widely-used libraries all block. Event loops are too inefficient otherwise. – [Karl Bielefeldt](https://softwareengineering.stackexchange.com/users/3965/karl-bielefeldt) 
 
-***SUMMARY***:上面这段话指出在某些情况下，如empty queue，event loop将被block，显然这就解释了`Most event loops will block`；至于 How does this fit into the "the event loop paradigm, opposed to using threads, uses nonblocking asynchronous calls"，我想这个问题中所描述的是指，当event loop被通知某个event的时候，它执行event handler是采用的nonblocking asynchronous calls。
+> NOTE:上面这段话指出在某些情况下，如empty queue，event loop将被block，显然这就解释了`Most event loops will block`；至于 How does this fit into the "the event loop paradigm, opposed to using threads, uses nonblocking asynchronous calls"，我想这个问题中所描述的是指，当event loop被通知某个event的时候，它执行event handler是采用的nonblocking asynchronous calls。
 
 
 

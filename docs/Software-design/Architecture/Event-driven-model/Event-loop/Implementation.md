@@ -1,4 +1,6 @@
-# [Single Threaded Event Loop vs Multi Threaded Non Blocking Worker in Node.JS](https://stackoverflow.com/questions/21485920/single-threaded-event-loop-vs-multi-threaded-non-blocking-worker-in-node-js)
+# Implementation
+
+## stackoverflow [Single Threaded Event Loop vs Multi Threaded Non Blocking Worker in Node.JS](https://stackoverflow.com/questions/21485920/single-threaded-event-loop-vs-multi-threaded-non-blocking-worker-in-node-js)
 
 Node.JS biggest advantage is it's non blocking nature. It's single threaded, so it doesn't need to spawn a new thread for each new incoming connection.
 
@@ -8,7 +10,7 @@ Maybe I misunderstood something, but where exactly is the advantage. If there ar
 
 Thanks Christian
 
-## [A](https://stackoverflow.com/a/21488067)
+### [A](https://stackoverflow.com/a/21488067)
 
 [You need to read about libuv](http://nikhilm.github.io/uvbook/), the "magic" behind node's non-blocking I/O.
 
@@ -22,7 +24,7 @@ So yes, JavaScript runs on a **single thread**. Yes, node (via libuv) spawns man
 
 
 
-## [A](https://stackoverflow.com/a/21486005)
+### [A](https://stackoverflow.com/a/21486005)
 
 Alright, let's break this down a bit. Single threaded applications have advantages: you can never get deadlocks or race conditions. These issues stem from simultaneous memory access in multi-threaded systems. If two threads access the same piece of information weird things can happen.
 
@@ -38,7 +40,7 @@ As a minor addendum I would say that Node.JS's biggest advantage is that it allo
 
 
 
-# [Threads vs Event Loop, Again](http://troglobit.com/2017/09/19/threads-vs-event-loop-again-.../) 
+## [Threads vs Event Loop, Again](http://troglobit.com/2017/09/19/threads-vs-event-loop-again-.../) 
 
 I still get asked this, from time to time. Maybe it’s because I only use **event loops**, maybe it’s because I’ve written [libuEv](https://github.com/troglobit/libuev), or maybe people still don’t understand:
 
@@ -61,6 +63,6 @@ Sometimes the combination of multiple threads *and* an event loop per thread can
 ***SUMMARY*** : combine event loop and multiple threads
 
 
-# 20190710
+## 20190710
 
 现在想想，其实这个问题更应该是reactor和multithread之间的异与同

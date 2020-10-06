@@ -22,22 +22,28 @@ https://storm.cis.fordham.edu/~mesterharm/2350/event.html
 
 一个event-driven model的组成成分：
 
-- monitor/listener，监控event
-- event和event handler之间的映射关系表
-- dispatcher，派发event，即按照event和event handler之间的映射关系，通知executor执行event handler
-- executor，执行event handler
+| 组成部分                             | 说明                                                         |
+| ------------------------------------ | ------------------------------------------------------------ |
+| monitor/listener                     | 监控事件源、收集event                                        |
+| event和event handler之间的映射关系表 |                                                              |
+| dispatcher                           | 派发event，即按照event和event handler之间的映射关系，通知executor执行event handler |
+| executor                             | 执行event handler                                            |
+
+### See also
+
+martinfowler [What do you mean by “Event-Driven”?](https://martinfowler.com/articles/201701-event-driven.html)
 
 ## What is event?
 
 Event是一个非常概括、宽泛的概念，在Event-driven model中，非常多的行为都会产生event，我们把它称为source of event，我们可以将source of event划分为两类：
 
-### external environment
+### 1) external environment
 
 我们以自底向上的思路来分析源自external environment的event，一个[computing system](https://dengking.github.io/Linux-OS/Architecture/Architecture-of-computing-system/)的最底层是hardware，hardware产生的[interrupt](https://en.wikipedia.org/wiki/Interrupt)，然后由OS kernel将这些interrupt“转换”为signal（现代programming language会使用exception来抽象signal）、IO（因为IO的实现是依赖于interrupt的，IO包括了非常多的内容，用户操作、网络通信等都可以看做是IO，events can represent availability of new data for reading a file or network stream.）event等，并通知到application process。
 
 关于这一点，参见维基百科[Event (computing)](https://en.wikipedia.org/wiki/Event_(computing))的[Event handler](https://en.wikipedia.org/wiki/Event_(computing)#Event_handler)段。
 
-### 程序内部
+### 2) 程序内部
 
 Event可能源自于external environment，也可能源自于程序之内，即程序内部将一些条件等看做event，比如condition variable。
 
@@ -45,25 +51,19 @@ TODO: 需要补充一些具体例子。
 
 下面补充了维基百科[Event (computing)](https://en.wikipedia.org/wiki/Event_(computing))来进行详细说明。
 
-### 维基百科[Event (computing)](https://en.wikipedia.org/wiki/Event_(computing))
+### See also: 
 
-#### [Delegate event model](https://en.wikipedia.org/wiki/Event_(computing)#Delegate_event_model)
-
-> NOTE: 原文的这一段没有读懂。
+维基百科[Event (computing)](https://en.wikipedia.org/wiki/Event_(computing))
 
 
 
-## Event-driven programming
+## Implementation of event-driven model
 
 Event-driven programming告诉我们如何实现event-driven model。
 
 ### Event-driven programming中需要考虑的一些问题
 
-Event-driven model实现中需要考虑的一些问题：
 
-- 如何声明event和event handler之间的关系，显然event driven model需要记录下event和event handler之间的映射关系？
-
-- 如何进行持续监控，即如何实现monitor？
 
 #### Monitor：如何进行持续监控
 
@@ -77,11 +77,10 @@ Event-driven model肯定需要记录下event和event handler之间的映射关�
 
 下面罗列了一些实现案例：
 
-##### Interrupt Descriptor Table
-
-参见：工程[Linux-OS](https://dengking.github.io/Linux-OS)的[4.2-Interrupts-and-Exceptions](https://dengking.github.io/Linux-OS/Kernel/Book-Understanding-the-Linux-Kernel/Chapter-4-Interrupts-and-Exceptions/4.2-Interrupts-and-Exceptions/)的[4.2.3. Interrupt Descriptor Table](https://dengking.github.io/Linux-OS/Kernel/Book-Understanding-the-Linux-Kernel/Chapter-4-Interrupts-and-Exceptions/4.2-Interrupts-and-Exceptions/#423-interrupt-descriptor-table)
-
-维基百科[Interrupt descriptor table](https://en.wikipedia.org/wiki/Interrupt_descriptor_table)
+| 案例                       | 说明                                                         |
+| -------------------------- | ------------------------------------------------------------ |
+| Interrupt Descriptor Table | 参见：<br>- 工程[Linux-OS](https://dengking.github.io/Linux-OS)的[4.2-Interrupts-and-Exceptions](https://dengking.github.io/Linux-OS/Kernel/Book-Understanding-the-Linux-Kernel/Chapter-4-Interrupts-and-Exceptions/4.2-Interrupts-and-Exceptions/)的[4.2.3. Interrupt Descriptor Table](https://dengking.github.io/Linux-OS/Kernel/Book-Understanding-the-Linux-Kernel/Chapter-4-Interrupts-and-Exceptions/4.2-Interrupts-and-Exceptions/#423-interrupt-descriptor-table) <br>- 维基百科[Interrupt descriptor table](https://en.wikipedia.org/wiki/Interrupt_descriptor_table) |
+|                            |                                                              |
 
 
 
@@ -95,27 +94,18 @@ Event-driven model肯定需要记录下event和event handler之间的映射关�
 
 如何来执行event handler？在决定如何来执行event handler的时候，开发者需要考虑如下问题：
 
-- event handler执行的成本，此处的成本可以有多种解释，比如，它可以表示event handler执行的时长、可以表示event handler执行的资源耗费
+1) event handler执行的成本，此处的成本可以有多种解释，比如，它可以表示event handler执行的时长、可以表示event handler执行的资源耗费
 
-- 并发性，同时发生的事件发生可能多，如何快速地处理这些事件呢？显然这就涉及了concurrency的问题，即并发地执行handler（event and concurrency）
+2) 并发性，同时发生的事件发生可能多，如何快速地处理这些事件呢？显然这就涉及了concurrency的问题，即并发地执行handler（event and concurrency）
 
 所以开发者需要根据需求选择合适的实现方式。下面罗列一些执行方式：
 
-##### Single process
+|                   | Single process                                               | Multiple process                                             |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Single thread** | monitor和executor位于同一个线程，这种比较适合event handler的执行成本比较小的情况 | monitor和executor分别处于两个不同的进程，这种情况dispatcher的实现显然涉及inter-process communication。<br>对于这种情况，可以将整体看做是一个event-driven system，也可以看做是多个event-driven system进行pipeline |
+| **Multi thread**  | monitor和executor分别处于两个不同的线程，这种情况dispatcher的实现显然涉及到inter-thread communication |                                                              |
 
-###### single thread
 
-monitor和executor位于同一个线程，这种比较适合event handler的执行成本比较小的情况。
-
-###### multi thread
-
-monitor和executor分别处于两个不同的线程，这种情况dispatcher的实现显然涉及到inter-thread communication。
-
-##### Multiple process
-
-monitor和executor分别处于两个不同的进程，这种情况dispatcher的实现显然涉及inter-process communication。
-
-对于这种情况，可以将整体看做是一个event-driven system，也可以看做是多个event-driven system进行pipeline。
 
 
 
@@ -149,29 +139,15 @@ In addition, systems such as Node.js are also event-driven.
 
 实现event-driven model的一些pattern。
 
-#### [Message queue](https://en.wikipedia.org/wiki/Message_queue)
-
-#### [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
-
-#### [Publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
-
-一个典型的例子就是redis的pub/sub
-
-在这种情况下，pub需要注册回调函数，用于指定当收到信息时，需要执行的动作。这非常类似于signal handler。
-
-#### Actor model
-
-参见[Actor model](https://en.wikipedia.org/wiki/Actor_model)
-
-
-
-#### [Reactor pattern](https://en.wikipedia.org/wiki/Reactor_pattern) 
-
-#### [Proactor pattern](https://en.wikipedia.org/wiki/Proactor_pattern)
-
-#### [Messaging pattern](https://en.wikipedia.org/wiki/Messaging_pattern)
-
-
+| Pattern                                                      | 说明                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Message queue](https://en.wikipedia.org/wiki/Message_queue) |                                                              |
+| [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) |                                                              |
+| [Publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) | 一个典型的例子就是redis的pub/sub<br>在这种情况下，pub需要注册回调函数，用于指定当收到信息时，需要执行的动作。这非常类似于signal handler。 |
+| [Actor model](https://en.wikipedia.org/wiki/Actor_model)     |                                                              |
+| [Reactor pattern](https://en.wikipedia.org/wiki/Reactor_pattern) |                                                              |
+| [Proactor pattern](https://en.wikipedia.org/wiki/Proactor_pattern) |                                                              |
+| [Messaging pattern](https://en.wikipedia.org/wiki/Messaging_pattern) |                                                              |
 
 ### Framework/library
 
