@@ -18,3 +18,5 @@ test是软件开发过程中非常重要的一环。
 
 - 可能的场景
 - 代码层: coverage
+
+在[How SQLite Is Tested](https://sqlite.org/testing.html)描述了sqlite的测试方法。
