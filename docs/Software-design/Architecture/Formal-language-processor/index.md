@@ -14,6 +14,14 @@
 
 一般，formal language processor都是采用的**层次化结构**
 
+在工程compiler-principle中也有关于**层次化结构**的讨论
+
+> TODO: 关于clang的架构中中间表示的重要意义，参见龙书chapter6的第一段。
+>
+> 如何描述之间表示？ASDL是一种方式
+>
+> 
+
 ## 中间表示
 
 不同层次之间需要使用**中间表示**
