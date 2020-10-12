@@ -1,9 +1,11 @@
 nav:
     - Introduction: index.md
-    - Experience: Experience
-########## 软件质量，它指导着我们进行设计、开发##########    
+    - Software-engineering: Software-engineering.md
+    
+    ########## 软件质量，它指导着我们进行设计、开发##########    
     - Software-quality: Software-quality
     - Software-requirements: Software-requirements
     - Software-design: Software-design
     - Software-development: Software-development
     - Software-distribution: Software-distribution
+    - Experience: Experience

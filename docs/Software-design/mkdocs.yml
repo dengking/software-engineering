@@ -1,6 +1,6 @@
 nav:
     - Introduction: index.md
-    - Architecture: Architecture
+    - Abstraction: Abstraction
     - Control-theory: Control-theory
     - Design-pattern: Design-pattern
     - Experience: Experience.md
