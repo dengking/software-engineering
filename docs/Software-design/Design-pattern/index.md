@@ -68,11 +68,12 @@ design pattern如此之多，如何对它们进行分类至关重要，这是本
 
 在工程programming-language的`Theory\Design-pattern\OOP-design-pattern`章节进行详细描述。
 
-### TODO [Concurrency patterns](https://en.wikipedia.org/wiki/Concurrency_pattern)
+### [Concurrency patterns](https://en.wikipedia.org/wiki/Concurrency_pattern)
+
+参见工程Parallel-computing的`Concurrent-computing\Design-pattern`章节。
 
 
 
+### [Architectural design pattern](https://en.wikipedia.org/wiki/Architectural_pattern) 
 
-
-### TODO [Architectural design pattern](https://en.wikipedia.org/wiki/Architectural_pattern) 
-
+参见`Software-design\Design-pattern\Architecture-pattern`章节。
