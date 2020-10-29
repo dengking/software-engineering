@@ -1,7 +1,5 @@
 # Abstraction and architecture
 
-本节对上一节的Abstraction in architecture中所提及内容进行详细论述。
-
 在进行系统设计的时候，[loose coupling](https://en.wikipedia.org/wiki/Loose_coupling) 是架构师的追求目标，为此，架构师们往往进行分解，比如将系统分解为多个 [components](https://en.wikipedia.org/wiki/Software_component#Component_Definition)，然后各[components](https://en.wikipedia.org/wiki/Software_component#Component_Definition)抽象出[**接口**](https://en.wikipedia.org/wiki/Interface_(computing))，它们之间就通过抽象的[**接口**](https://en.wikipedia.org/wiki/Interface_(computing))来进行交互，显然，接口就是对功能的抽象描述。各 [components](https://en.wikipedia.org/wiki/Software_component#Component_Definition) 彼此相互透明（隐藏内部细节），通过[接口](https://en.wikipedia.org/wiki/Interface_(computing))来进行交互。
 
 
