@@ -1,7 +1,7 @@
 nav:
     - Introduction: index.md
     - Plugin-architecture: Plugin-architecture
-    - Event-driven-model: Event-driven-model
+    - Message-system: Message-system
     - Formal-language-processor: Formal-language-processor
     - Monolithic-and-micro: Monolithic-and-micro
     - Middleware: Middleware
