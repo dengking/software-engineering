@@ -1,7 +1,6 @@
 nav:
     - Introduction: index.md
     - Plugin-architecture: Plugin-architecture
-    - Message-processing-system: Message-processing-system
     - Formal-language-processor: Formal-language-processor
     - Monolithic-and-micro: Monolithic-and-micro
     - Middleware: Middleware
