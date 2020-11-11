@@ -60,7 +60,7 @@ ssize_t sendfile(
 
 用上了零拷贝技术后开发了 2.0 版本，图片加载速度明显有了提升。不过老板发现同时访问的人变多了以后，又变慢了，又让你继续优化。这个时候，你需要：多路复用技术。
 
-
+> NOTE: 关于`sendfile`，参见工程Linux-OS的`Network\Programming\Send-file`章节
 
 用上了零拷贝技术后开发了 2.0 版本，图片加载速度明显有了提升。不过老板发现同时访问的人变多了以后，又变慢了，又让你继续优化。这个时候，你需要：多路复用技术。
 
@@ -116,3 +116,4 @@ select 有三弊，epoll 有三优：
 
 Lock-free 能够广泛应用得益于目前主流的 CPU 都提供了原子级别的 read-modify-write 原语，这就是著名的 CAS(Compare-And-Swap)操作。在 Intel x86 系列处理器上，就是 cmpxchg 系列指令。
 
+> NOTE: 关于lock free，参见工程parallel-computing的`Concurrent-computing\Concurrency-control\Concurrency-control\Lock-free`章节
