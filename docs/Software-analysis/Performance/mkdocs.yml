@@ -1,3 +1,5 @@
 nav:
     - Introduction: index.md
+    - Memory: Memory
     - High-performance-server: High-performance-server
+    - Bound: Bound
