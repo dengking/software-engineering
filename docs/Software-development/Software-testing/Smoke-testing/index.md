@@ -1,0 +1,1 @@
+# [Smoke testing (software)](https://en.wikipedia.org/wiki/Smoke_testing_(software))

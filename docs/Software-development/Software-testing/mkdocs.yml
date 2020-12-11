@@ -1,2 +1,6 @@
 nav:
-    - Software-testing: Software-testing.md
+    - Introduction: index.md
+    - Unit-testing: Unit-testing
+    - Smoke-testing: Smoke-testing
+    - Heisenbug: Heisenbug.md
+    - Code-coverage: Code-coverage
