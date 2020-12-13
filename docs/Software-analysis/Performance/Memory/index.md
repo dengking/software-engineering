@@ -134,5 +134,6 @@ Note also that on the linux machine, the jump happens when the length of the str
 
 避免每次system call new heap allocation的另外一个例子是C++ `std::string` SSO，参见工程programming language的`C-and-C++\String\C++string`章节。
 
+### thoughts
 
-
+相比于copy、move，new才是慢的
