@@ -1,0 +1,4 @@
+nav:
+    - Introduction: index.md
+    - Automated-test-framework: Automated-test-framework
+    - Test-Anything-Protocol: Test-Anything-Protocol
