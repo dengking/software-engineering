@@ -1,6 +1,6 @@
 # 分层
 
-一种常见的架构方式是：分层，具体参见 [abstraction layer](https://en.wikipedia.org/wiki/Abstraction_layer)，这是abstraction在architecture领域的一个体现。计算机科学领域的[abstraction layer](https://en.wikipedia.org/wiki/Abstraction_layer)思想的可谓由来已久且影响深远，在计算机科学的方方面面我们都能够看到它的身影和影响，后面为了描述便利，将[abstraction layer](https://en.wikipedia.org/wiki/Abstraction_layer)思想简称为**分层思想**。最能够体现**分层思想**的一个词是：hierarchy（层级），维基百科的[hierarchy](https://en.wikipedia.org/wiki/Hierarchy)对hierarchy的总结是非常详细的，非常值得一读，从中我们可以看到，hierarchy在各个学科中有着广泛的应用：
+一种常见的架构方式是：分层，具体参见 [abstraction layer](https://en.wikipedia.org/wiki/Abstraction_layer)，这是abstraction在architecture领域的一个体现。计算机科学领域的 [abstraction layer](https://en.wikipedia.org/wiki/Abstraction_layer) 思想的可谓由来已久且影响深远，在计算机科学的方方面面我们都能够看到它的身影和影响，后面为了描述便利，将[abstraction layer](https://en.wikipedia.org/wiki/Abstraction_layer)思想简称为**分层思想**。最能够体现**分层思想**的一个词是：hierarchy（层级），维基百科的[hierarchy](https://en.wikipedia.org/wiki/Hierarchy)对hierarchy的总结是非常详细的，非常值得一读，从中我们可以看到，hierarchy在各个学科中有着广泛的应用：
 
 > Hierarchy is an important concept in a wide variety of fields, such as [philosophy](https://en.wikipedia.org/wiki/Philosophy), [mathematics](https://en.wikipedia.org/wiki/Mathematics), [computer science](https://en.wikipedia.org/wiki/Computer_science), [organizational theory](https://en.wikipedia.org/wiki/Organizational_theory), [systems theory](https://en.wikipedia.org/wiki/Systems_theory), and the [social sciences](https://en.wikipedia.org/wiki/Social_sciences) (especially [political philosophy](https://en.wikipedia.org/wiki/Political_philosophy)).
 
@@ -22,7 +22,7 @@
 
 参见：[The Structure of a Compiler](https://dengking.github.io/compiler-principle/Chapter-1-Introduction/1.2-The-Structure-of-a-Compiler/)
 
-#### 中间表示
+#### 中间表示(IR)
 
 编译器分为前段和后端，中间表示理解前段与后端。也可以说中间表示是两者之间的接口。
 

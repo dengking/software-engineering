@@ -6,17 +6,8 @@
 
 ## 分层
 
-一种常见的分解方式是：分层。这种架构方式普遍存在，在[下一篇](./Abstraction-and-architecture-and-layer.md)进行专门介绍。
+一种常见的分解方式是：分层。这种架构方式普遍存在，在`Software-design\Design-pattern\Architecture-pattern\Multilayered-architecture`中进行了专门介绍。
 
 ## 接口
 
-从上篇开始，我们一直都在接触“接口”这个词语，在上篇中，我把“接口”定义为：对抽象的描述。有必要看看维基百科的[Interface (computing)](https://en.wikipedia.org/wiki/Interface_(computing))，它总结地比较好。
-
-以下两类接口是software engineer经常会使用的两个概念：
-
-- [Application programming interface](https://en.wikipedia.org/wiki/Application_programming_interface) aka API
-
-- [Application binary interface](https://en.wikipedia.org/wiki/Application_binary_interface) aka ABI
-
-在[下一篇](./Abstraction-and-architecture-and-layer.md)的[以层次思想来思考](Abstraction-and-architecture-and-layer.md#以层次思想来思考)节会对两者进行区分。
-
+在`./Interface`章节中对interface进行了具体的描述。
