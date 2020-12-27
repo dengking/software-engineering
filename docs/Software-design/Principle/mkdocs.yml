@@ -2,3 +2,4 @@ nav:
     - Introduction: index.md
     - Abstraction: Abstraction
     - Control-theory: Control-theory
+    - Information-hiding: Information-hiding
