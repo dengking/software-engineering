@@ -38,7 +38,7 @@ Pools can also be used for objects, in which context a *pool* refers to a [desig
 
 #### [hiredispool](https://github.com/aclisp/hiredispool)
 
-## Memory pool	
+## Memory pool
 
 ### wikipedia [Memory pool](https://en.wikipedia.org/wiki/Memory_pool)
 
