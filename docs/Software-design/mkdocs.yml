@@ -1,7 +1,8 @@
 nav:
     - Introduction: index.md
     - Principle: Principle
-    
+    - Commonality-and-variability-analysis: Commonality-and-variability-analysis
+    - Decompose-and-assemble: Decompose-and-assemble
     - Design-pattern: Design-pattern
     - Experience: Experience.md
     - Unified-Modeling-Language: Unified-Modeling-Language
