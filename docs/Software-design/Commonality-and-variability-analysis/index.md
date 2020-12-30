@@ -16,7 +16,9 @@ commonality 公共，对应的是code reuse；
 
 variability  可变，差异，对应的是abstraction 和 polymorphism；
 
+## Example
 
+在 jianshu [策略模式(Strategy Pattern)](https://www.jianshu.com/p/422acad380dd) 中也涉及了这个topic。
 
 ## TODO
 
@@ -31,3 +33,4 @@ https://www.dre.vanderbilt.edu/~schmidt/PDF/Commonality_Variability.pdf
 https://portal.netobjectives.com/wp-content/uploads/2018/01/Introduction_CommonalityVariabilityAnalysis.pdf
 
 https://portal.netobjectives.com/pages/learning/webinars-and-podcasts/commonality-variability-analysis/
+
