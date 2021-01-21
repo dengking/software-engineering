@@ -1,4 +1,4 @@
-# 维基百科[Inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)
+# wikipedia [Inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)
 
 In [software engineering](https://en.wikipedia.org/wiki/Software_engineering), **inversion of control** (**IoC**) is a design principle in which custom-written portions of a [computer program](https://en.wikipedia.org/wiki/Computer_program) receive the [flow of control](https://en.wikipedia.org/wiki/Control_flow) from a generic [framework](https://en.wikipedia.org/wiki/Software_framework). A [software architecture](https://en.wikipedia.org/wiki/Software_architecture) with this design inverts（颠倒） control as compared to traditional [procedural programming](https://en.wikipedia.org/wiki/Procedural_programming): in traditional programming, the custom code that expresses the purpose of the program [calls](https://en.wikipedia.org/wiki/Function_call#Main_concepts) into reusable libraries to take care of generic tasks, but with inversion of control, it is the **framework** that calls into the custom, or task-specific, code.
 
@@ -41,15 +41,20 @@ In order for the running program to bind objects to one another, the objects mus
 
 In [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), there are several basic techniques to implement inversion of control. These are:
 
-- Using a [service locator pattern](https://en.wikipedia.org/wiki/Service_locator_pattern)
-- Using **dependency injection**, for example
-  - Constructor injection
-  - Parameter injection
-  - Setter injection
-  - Interface injection
-- Using a contextualized lookup
-- Using [template method design pattern](https://en.wikipedia.org/wiki/Template_method_design_pattern)
-- Using [strategy design pattern](https://en.wikipedia.org/wiki/Strategy_design_pattern)
+1、Using a [service locator pattern](https://en.wikipedia.org/wiki/Service_locator_pattern)
+
+2、Using **dependency injection**, for example
+
+- Constructor injection
+- Parameter injection
+- Setter injection
+- Interface injection
+
+3、Using a contextualized lookup
+
+4、Using [template method design pattern](https://en.wikipedia.org/wiki/Template_method_design_pattern)
+
+5、Using [strategy design pattern](https://en.wikipedia.org/wiki/Strategy_design_pattern)
 
 In an original article by Martin Fowler,[[9\]](https://en.wikipedia.org/wiki/Inversion_of_control#cite_note-9) the first three different techniques are discussed. In a description about inversion of control types,[[10\]](https://en.wikipedia.org/wiki/Inversion_of_control#cite_note-10) the last one is mentioned. Often the contextualized lookup will be accomplished using a service locator。
 

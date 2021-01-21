@@ -28,7 +28,13 @@ IoC中的control是一个含义非常宽泛的词语，维基百科给出的解�
 
 .....
 
-显然这些都是control，如果我们从这个宽泛的角度出发来理解的话，就会发现软件工程领域的很多内容都可以归入到IoC中。原本这些control是由programmer来进行实现，而IoC则启发我们：这些control应该由framework来进行实现，即将**控制权**移交给**framework**；此处的framework的含义也是非常宽泛的，它可以是类似于spring的container，也可以是类似于reference counting这样的逻辑，显然IOC可以简单地总结为：
+显然这些都是control，如果我们从这个宽泛的角度出发来理解的话，就会发现软件工程领域的很多内容都可以归入到IoC中。原本这些control是由programmer来进行实现，而IoC则启发我们：这些control应该由framework来进行实现，即将**控制权**移交给**framework**；此处的framework的含义也是非常宽泛的，它可以是:
+
+1、类似于spring的container
+
+2、类似于reference counting这样的逻辑
+
+显然IOC可以简单地总结为：
 
 非IOC: 由programmer来实现control
 
