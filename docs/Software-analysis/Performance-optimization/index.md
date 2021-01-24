@@ -94,5 +94,10 @@ cpp core guideline中有相关的内容
 
 ### Algorithm and DS
 
+这在工程discrete中进行讨论；
 
 
+
+## Application
+
+1、参见工程programming-language的`C-family\C++\Guide\Performance-optimization`章节。
