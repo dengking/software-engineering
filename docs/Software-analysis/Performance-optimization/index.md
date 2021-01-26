@@ -24,9 +24,10 @@ Optimization principle贯穿了computer science。
 
 tag-avoid-system-call
 
-#### TODO: 为什么system call的overhead大?
+####  Why system call slow?
 
-1、从user space到kernel space，链路比较长
+参见`./Why-system-call-slow`。
+
 
 #### How to do?
 
@@ -50,7 +51,9 @@ parallel computing的崛起，催收concurrent programming，因此concurrency�
 
 它们都能够避免进入system call。
 
+2、合理地设计，减少线程竞争
 
+> TODO: 以redis线程模型为例来进行说明，每个thread一个私有的queue，这样有效地避免竞争
 
 ### Memory的优化
 
