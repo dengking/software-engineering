@@ -1,4 +1,4 @@
-# [Software configuration management](https://en.wikipedia.org/wiki/Software_configuration_management)
+# wikipedia [Software configuration management](https://en.wikipedia.org/wiki/Software_configuration_management)
 
 In [software engineering](https://en.wikipedia.org/wiki/Software_engineering), **software configuration management** (**SCM** or **S/W CM**) is the task of tracking and controlling changes in the software, part of the larger cross-disciplinary field of [configuration management](https://en.wikipedia.org/wiki/Configuration_management). SCM practices include [revision control](https://en.wikipedia.org/wiki/Revision_control) and the establishment of [baselines](https://en.wikipedia.org/wiki/Baseline_(configuration_management)). If something goes wrong, SCM can determine what was changed and who changed it. If a configuration is working well, SCM can determine how to replicate it across many hosts.
 

@@ -1,0 +1,139 @@
+edit_uri: ''
+extra_css:
+- css/extra.css
+google_analytics:
+- UA-27795084-5
+- mkdocs.org
+markdown_extensions:
+- toc:
+    permalink: '#'
+nav:
+- Introduction: index.md
+- Software-engineering: Software-engineering.md
+- Software-quality:
+  - Software-quality: Software-quality/Software-quality.md
+  - Reusability: Software-quality/Reusability.md
+- Software-requirements:
+  - Software-requirements: Software-requirements/Software-requirements.md
+- Software-design:
+  - Introduction: Software-design/index.md
+  - Principle:
+    - Introduction: Software-design/Principle/index.md
+    - Abstraction:
+      - Abstraction-in-software-design: Software-design/Principle/Abstraction/Abstraction-in-software-design.md
+    - Control-theory:
+      - Introduction: Software-design/Principle/Control-theory/index.md
+      - Inversion-of-control:
+        - Introduction: Software-design/Principle/Control-theory/Inversion-of-control/index.md
+        - wikipedia-Inversion-of-control: Software-design/Principle/Control-theory/Inversion-of-control/wikipedia-Inversion-of-control.md
+        - tutorialsteacher-Inversion-of-Control: Software-design/Principle/Control-theory/Inversion-of-control/tutorialsteacher-Inversion-of-Control.md
+      - TODO-Control-dependency:
+        - Introduction: Software-design/Principle/Control-theory/TODO-Control-dependency/index.md
+    - Information-hiding:
+      - Introduction: Software-design/Principle/Information-hiding/index.md
+      - Transparency:
+        - Introduction: Software-design/Principle/Information-hiding/Transparency/index.md
+  - Commonality-and-variability-analysis:
+    - Introduction: Software-design/Commonality-and-variability-analysis/index.md
+  - Decompose-and-assemble:
+    - Introduction: Software-design/Decompose-and-assemble/index.md
+  - Design-pattern:
+    - Introduction: Software-design/Design-pattern/index.md
+    - Architecture-pattern:
+      - Introduction: Software-design/Design-pattern/Architecture-pattern/index.md
+      - Plugin-architecture:
+        - Library-base-architecture: Software-design/Design-pattern/Architecture-pattern/Plugin-architecture/Library-base-architecture.md
+      - Monolithic-and-micro:
+        - Introduction: Software-design/Design-pattern/Architecture-pattern/Monolithic-and-micro/index.md
+      - Middleware:
+        - Introduction: Software-design/Design-pattern/Architecture-pattern/Middleware/index.md
+        - Message-oriented-middleware: Software-design/Design-pattern/Architecture-pattern/Middleware/Message-oriented-middleware.md
+      - Service-oriented-architecture:
+        - Introduction: Software-design/Design-pattern/Architecture-pattern/Service-oriented-architecture/index.md
+        - Microservice:
+          - Introduction: Software-design/Design-pattern/Architecture-pattern/Service-oriented-architecture/Microservice/index.md
+      - Task-model:
+        - Introduction: Software-design/Design-pattern/Architecture-pattern/Task-model/index.md
+      - Multilayered-architecture:
+        - Introduction: Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/index.md
+        - Abstraction-and-architecture-and-layer: Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/Abstraction-and-architecture-and-layer.md
+        - Book-code-reading:
+          - Introduction: Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/Book-code-reading/index.md
+    - Pool:
+      - Introduction: Software-design/Design-pattern/Pool/index.md
+      - Prefork:
+        - Introduction: Software-design/Design-pattern/Pool/Prefork/index.md
+      - Memory-pool:
+        - Introduction: Software-design/Design-pattern/Pool/Memory-pool/index.md
+  - Experience: Software-design/Experience.md
+  - Unified-Modeling-Language:
+    - Introduction: Software-design/Unified-Modeling-Language/index.md
+- Software-development:
+  - Introduction: Software-development/index.md
+  - Software-development: Software-development/Software-development.md
+  - Software-development-process:
+    - Introduction: Software-development/Software-development-process/index.md
+    - Test-driven-development:
+      - Introduction: Software-development/Software-development-process/Test-driven-development/index.md
+  - Software-configuration-management:
+    - Introduction: Software-development/Software-configuration-management/index.md
+  - Software-build:
+    - Introduction: Software-development/Software-build/index.md
+  - Software-testing:
+    - Introduction: Software-development/Software-testing/index.md
+    - Test-automation:
+      - Introduction: Software-development/Software-testing/Test-automation/index.md
+      - Automated-test-framework:
+        - Introduction: Software-development/Software-testing/Test-automation/Automated-test-framework/index.md
+      - Test-Anything-Protocol:
+        - Introduction: Software-development/Software-testing/Test-automation/Test-Anything-Protocol/index.md
+    - Unit-testing:
+      - Introduction: Software-development/Software-testing/Unit-testing/index.md
+      - xUnit: Software-development/Software-testing/Unit-testing/xUnit.md
+      - List-of-unit-testing-frameworks: Software-development/Software-testing/Unit-testing/List-of-unit-testing-frameworks.md
+    - Smoke-testing:
+      - Introduction: Software-development/Software-testing/Smoke-testing/index.md
+    - Heisenbug: Software-development/Software-testing/Heisenbug.md
+    - Code-coverage:
+      - Introduction: Software-development/Software-testing/Code-coverage/index.md
+  - Software-quality-assurance:
+    - Introduction: Software-development/Software-quality-assurance/index.md
+- Software-distribution:
+  - Introduction: Software-distribution/index.md
+  - Software-release-life-cycle: Software-distribution/Software-release-life-cycle.md
+- Software-analysis:
+  - Performance-optimization:
+    - Introduction: Software-analysis/Performance-optimization/index.md
+    - Why-system-call-slow:
+      - Introduction: Software-analysis/Performance-optimization/Why-system-call-slow/index.md
+    - Benchmark:
+      - Introduction: Software-analysis/Performance-optimization/Benchmark/index.md
+    - Memory:
+      - Introduction: Software-analysis/Performance-optimization/Memory/index.md
+      - We-Know-Where-You-Live-optimization:
+        - Introduction: Software-analysis/Performance-optimization/Memory/We-Know-Where-You-Live-optimization/index.md
+    - High-performance-server:
+      - Introduction: Software-analysis/Performance-optimization/High-performance-server/index.md
+      - Load-balancing:
+        - Introduction: Software-analysis/Performance-optimization/High-performance-server/Load-balancing/index.md
+      - "developer.51cto-\u9AD8\u6027\u80FD\u5F00\u53D1\u7684\u5341\u5927\u6B66\u5668":
+        - Introduction: "Software-analysis/Performance-optimization/High-performance-server/developer.51cto-\u9AD8\
+            \u6027\u80FD\u5F00\u53D1\u7684\u5341\u5927\u6B66\u5668/index.md"
+      - "developer.51cto-\u652F\u6491\u4EBF\u7EA7\u9AD8\u5E76\u53D1\u7684\u7CFB\u7EDF\u957F\u5565\u6837":
+        - Introduction: "Software-analysis/Performance-optimization/High-performance-server/developer.51cto-\u652F\
+            \u6491\u4EBF\u7EA7\u9AD8\u5E76\u53D1\u7684\u7CFB\u7EDF\u957F\u5565\u6837\
+            /index.md"
+    - Bound:
+      - Introduction: Software-analysis/Performance-optimization/Bound/index.md
+- Experience:
+  - 12factor: Experience/12factor.md
+  - Experience: Experience/Experience.md
+plugins:
+- search
+repo_url: https://github.com/dengking/Linux-OS
+site_author: DengKing
+site_description: Project documentation with Markdown.
+site_name: Linux-OS
+site_url: https://dengking.github.io/Linux-OS
+theme:
+  name: material
