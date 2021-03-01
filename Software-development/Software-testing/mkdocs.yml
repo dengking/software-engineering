@@ -1,0 +1,7 @@
+nav:
+    - Introduction: index.md
+    - Test-automation: Test-automation
+    - Unit-testing: Unit-testing
+    - Smoke-testing: Smoke-testing
+    - Heisenbug: Heisenbug.md
+    - Code-coverage: Code-coverage
