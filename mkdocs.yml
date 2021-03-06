@@ -76,6 +76,10 @@ nav:
           - Introduction: Software-design/Design-pattern/Architecture-pattern/Service-oriented-architecture/Microservice/index.md
       - Task-model:
         - Introduction: Software-design/Design-pattern/Architecture-pattern/Task-model/index.md
+        - Schedule:
+          - Introduction: Software-design/Design-pattern/Architecture-pattern/Task-model/Schedule/index.md
+          - Priority-inversion:
+            - Introduction: Software-design/Design-pattern/Architecture-pattern/Task-model/Schedule/Priority-inversion/index.md
       - Multilayered-architecture:
         - Introduction: Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/index.md
         - Abstraction-and-architecture-and-layer: Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/Abstraction-and-architecture-and-layer.md
