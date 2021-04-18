@@ -1,3 +1,4 @@
 nav:
     - Introduction: index.md
+    - Small-Object-String-Optimization: Small-Object-String-Optimization
     - We-Know-Where-You-Live-optimization: We-Know-Where-You-Live-optimization
