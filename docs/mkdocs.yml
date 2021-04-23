@@ -8,5 +8,6 @@ nav:
     - Software-design: Software-design
     - Software-development: Software-development
     - Software-distribution: Software-distribution
-    - Software-analysis: Software-analysis
+    - TODO-Software-analysis: TODO-Software-analysis
+    - Performance-optimization: Performance-optimization
     - Experience: Experience
