@@ -3,5 +3,6 @@ nav:
     - Test-automation: Test-automation
     - Unit-testing: Unit-testing
     - Smoke-testing: Smoke-testing
+    - Fuzz-testing: Fuzz-testing
     - Heisenbug: Heisenbug.md
     - Code-coverage: Code-coverage

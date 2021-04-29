@@ -20,3 +20,8 @@ test是软件开发过程中非常重要的一环。
 - 代码层: coverage
 
 在[How SQLite Is Tested](https://sqlite.org/testing.html)描述了sqlite的测试方法。
+
+### [nlohmann](https://github.com/nlohmann)/**[json](https://github.com/nlohmann/json)**
+
+Our class is heavily [unit-tested](https://github.com/nlohmann/json/tree/develop/test/src) and covers [100%](https://coveralls.io/r/nlohmann/json) of the code, including all exceptional behavior. Furthermore, we checked with [Valgrind](https://valgrind.org/) and the [Clang Sanitizers](https://clang.llvm.org/docs/index.html) that there are no memory leaks. [Google OSS-Fuzz](https://github.com/google/oss-fuzz/tree/master/projects/json) additionally runs fuzz tests against all parsers 24/7, effectively executing billions of tests so far. To maintain high quality, the project is following the [Core Infrastructure Initiative (CII) best practices](https://bestpractices.coreinfrastructure.org/projects/289).
+

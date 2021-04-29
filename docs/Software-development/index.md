@@ -1,21 +1,23 @@
-# 前言
+# 关于本章
 
 Software development是最最核心的活动。
 
 
 
-### 工程需要考虑的问题
+## wikipedia [Software development](https://en.wikipedia.org/wiki/Software_development)
 
-#### [Software configuration management](https://en.wikipedia.org/wiki/Software_configuration_management)
 
-在软件公司，一般都会有配管的角色。
 
-##### version control 
+## wikipedia [Tools](https://en.wikipedia.org/wiki/Programming_tool)
 
-可以使用的工具：
+- [Compiler](https://en.wikipedia.org/wiki/Compiler)
+- [Debugger](https://en.wikipedia.org/wiki/Debugger)
+- [Profiler](https://en.wikipedia.org/wiki/Profiling_(computer_programming))
+- [GUI designer](https://en.wikipedia.org/wiki/Graphical_user_interface_builder)
+- [Modeling](https://en.wikipedia.org/wiki/UML_tool)
+- [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)
+- [Build automation](https://en.wikipedia.org/wiki/Build_automation)
+- [Release automation](https://en.wikipedia.org/wiki/Application-release_automation)
+- [Infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code)
+- [Testing](https://en.wikipedia.org/wiki/Category:Software_testing_tools)
 
-[git](https://git-scm.com/)
-
-svn
-
-##### build

@@ -28,73 +28,21 @@ Pools can also be used for objects, in which context a *pool* refers to a [desig
 
 ## Connection pool
 
-### wikipedia [connection pools](https://en.wikipedia.org/wiki/Connection_pool)
-
-### Implementation
-
-#### [redis-plus-plus](https://github.com/sewenew/redis-plus-plus)
-
-#### redis [Guidelines for Redis clients with support for Redis Sentinel](https://redis.io/topics/sentinel-clients)
-
-#### [hiredispool](https://github.com/aclisp/hiredispool)
+参见 `Connection-pool` 章节。
 
 ## Memory pool
 
-### wikipedia [Memory pool](https://en.wikipedia.org/wiki/Memory_pool)
-
-### wikipedia [Slab allocation](https://en.wikipedia.org/wiki/Slab_allocation)
-
-### Implementation
-
-#### stackoverflow [What are the usual im­ple­men­ta­tion de­tails be­hind mem­ory pools?](https://stackoverflow.com/questions/30508183/what-are-the-usual-im-ple-men-ta-tion-de-tails-be-hind-mem-ory-pools)
-
-#### [cacay/Memory*Pool*](https://github.com/cacay/MemoryPool)
-
-较好
-
-#### Boost.Pool
-
-https://www.boost.org/
-
-https://www.boost.org/doc/libs/1_75_0/
-
-[Pool](https://www.boost.org/doc/libs/1_75_0/libs/pool/)
-
-Memory pool management.
-
-theboostcpplibraries [Chapter 4. Boost.Pool](https://theboostcpplibraries.com/boost.pool)
-
-
-
-thinkingeek [A very simple memory pool in C++11](https://thinkingeek.com/2017/11/19/simple-memory-pool/)
-
-
+参见 `Memory-pool` 章节。
 
 ## Thread pool
 
-### wikipedia [Thread pool](https://en.wikipedia.org/wiki/Thread_pool)
-
-
-
-### zephyrproject [Memory Pools](https://docs.zephyrproject.org/1.12.0/kernel/memory/pools.html)
-
-
-
-### Implementation
-
-#### [progschj/Thread*Pool*](https://github.com/progschj/ThreadPool)
-
-#### [vit-vit/CTPL](https://github.com/vit-vit/CTPL)
-
-#### [inkooboo/thread-*pool*-cpp](https://github.com/inkooboo/thread-pool-cpp)
-
-#### [mtrebi/thread-*pool*](https://github.com/mtrebi/thread-pool)
-
-
+参见工程 `Parallel-computing` 的 `Thread-pool` 章节。
 
 ## Process pool
 
-Python [`multiprocessing`](https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing) — Process-based parallelism[¶](https://docs.python.org/3/library/multiprocessing.html#module-multiprocessing)
+参见 `Prefork-process-pool` 章节。
+
+
 
 ## Celery pool
 

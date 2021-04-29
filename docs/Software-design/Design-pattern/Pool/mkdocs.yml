@@ -1,4 +1,5 @@
 nav:
     - Introduction: index.md
-    - Prefork: Prefork
+    - Prefork-process-pool: Prefork-process-pool
     - Memory-pool: Memory-pool
+    - Connection-pool: Connection-pool
