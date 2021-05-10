@@ -1,5 +1,7 @@
 # 软件质量提升方案、科学的软件工程方法
 
+
+
 ## 前言
 
 一、本文论述如何系统的提升软件质量，会涉及软件工程的一些理论知识，同时本文还会描述如何应用于我们的项目、如何实现、介绍一些常用工具及其功能、使用方法等；
@@ -27,8 +29,6 @@
 > 1、tool非常多，合理的使用tool，能够发现潜在的bug
 
 5、规范，避免常见bug
-
-
 
 
 
@@ -166,6 +166,8 @@ zhihu [实际软件工程中是否真的需要100%代码覆盖率（code coverag
 >
 > 1、做code coverage的意义
 
+
+
 ### 如何生成代码覆盖率？
 
 1、rdc.hundsun [如何用Gcov优雅地实现代码覆盖率可视化报告?](https://rdc.hundsun.com/portal/article/704.html)
@@ -200,9 +202,9 @@ Test-driven development (TDD) is a software development process relying on softw
 
 ### 单元测试
 
-测试类、测试函数
+对类进行测试、对函数进行测试；
 
-测试用例编写（除了基本的功能测试，还需要测试 极端值、异常）
+测试用例编写（除了基本的功能测试，还需要测试 极端值、异常）；
 
 #### 案例: 
 
@@ -213,6 +215,10 @@ microsoft [Use the C++ Core Guidelines checkers](https://docs.microsoft.com/en-u
 TODO
 
 1、测试程序 和 源程序 如何放
+
+#### [Googletest](https://google.github.io/googletest/) 
+
+[Googletest Primer](https://google.github.io/googletest/primer.html)
 
 
 
@@ -236,9 +242,9 @@ Clang Thread Safety Analysis[¶](https://clang.llvm.org/docs/ThreadSafetyAnalysi
 
 ### dynamic code analysis
 
- [Valgrind](https://valgrind.org/) 
+一、[Valgrind](https://valgrind.org/) 
 
-[Clang Sanitizers](https://clang.llvm.org/docs/index.html) :
+二、[Clang Sanitizers](https://clang.llvm.org/docs/index.html) :
 
 1、MemorySanitizer[¶](https://clang.llvm.org/docs/MemorySanitizer.html#memorysanitizer)
 

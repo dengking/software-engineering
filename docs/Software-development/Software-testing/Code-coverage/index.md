@@ -77,7 +77,9 @@
 
 ### Coverage criteria
 
-
+> NOTE: 
+>
+> 各种覆盖的指标
 
 
 
