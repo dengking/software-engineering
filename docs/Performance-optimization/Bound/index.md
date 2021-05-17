@@ -1,6 +1,18 @@
-# IO bound vs cpu bound vs memory bound
+# Bound 
 
 
+
+## IO bound VS VS CPU bound VS data bound
+
+|            |                   |            |
+| ---------- | ----------------- | ---------- |
+| IO bound   | IO intensive      | IO密集型   |
+| CPU bound  | compute intensive | 计算密集型 |
+| Data bound | data intensive    | 数据密集型 |
+
+1、参考: `Book-Designing-Data-Intensive-Applications`
+
+2、data bound 和 memory bound有一点关联
 
 ## wikipedia [CPU-bound](https://en.wikipedia.org/wiki/CPU-bound)
 
