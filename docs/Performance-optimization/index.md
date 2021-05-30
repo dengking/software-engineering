@@ -26,7 +26,7 @@ tag-avoid-system-call
 
 ####  Why system call slow?
 
-参见`./Why-system-call-slow`。
+参见`Linux-OS` 的 `System-call`。
 
 #### How to do?
 
