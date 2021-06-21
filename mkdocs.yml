@@ -30,10 +30,12 @@ markdown_extensions:
 - pymdownx.tilde
 nav:
 - Introduction: index.md
-- Software-engineering: Software-engineering.md
+- Software-engineering:
+  - Introduction: Software-engineering/index.md
 - Software-quality:
-  - Software-quality: Software-quality/Software-quality.md
-  - Reusability: Software-quality/Reusability.md
+  - Introduction: Software-quality/index.md
+  - Reusability:
+    - Introduction: Software-quality/Reusability/index.md
 - Software-requirements:
   - Introduction: Software-requirements/index.md
 - Software-design:
@@ -155,9 +157,10 @@ nav:
       - Introduction: Performance-optimization/Memory/We-Know-Where-You-Live-optimization/index.md
   - Bound:
     - Introduction: Performance-optimization/Bound/index.md
-- Experience:
-  - 12factor: Experience/12factor.md
-  - Experience: Experience/Experience.md
+- DevOps:
+  - Introduction: DevOps/index.md
+  - 12factor:
+    - Introduction: DevOps/12factor/index.md
 plugins:
 - search
 repo_url: https://github.com/dengking/software-engineering
