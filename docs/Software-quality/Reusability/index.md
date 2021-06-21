@@ -2,17 +2,17 @@
 
 
 
-## 维基百科[Reusability](https://en.wikipedia.org/wiki/Reusability)
+## wikipedia [Reusability](https://en.wikipedia.org/wiki/Reusability)
 
 
 
 
 
-## 维基百科[Code reuse](https://en.wikipedia.org/wiki/Code_reuse)
+## wikipedia [Code reuse](https://en.wikipedia.org/wiki/Code_reuse)
 
 
 
-## [8 Types of  Code Reuse](https://simplicable.com/new/code-reuse)
+## simplicable [8 Types of  Code Reuse](https://simplicable.com/new/code-reuse)
 
 
 

@@ -1,4 +1,4 @@
 nav:
-    - Software-quality: Software-quality.md
+    - Introduction: index.md
     ########## 重用性##########
-    - Reusability: Reusability.md
+    - Reusability: Reusability

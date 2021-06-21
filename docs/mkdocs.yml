@@ -1,7 +1,7 @@
 nav:
     - Introduction: index.md
     
-    - Software-engineering: Software-engineering.md
+    - Software-engineering: Software-engineering
     ########## 软件质量，它指导着我们进行设计、开发##########    
     - Software-quality: Software-quality
     
@@ -17,4 +17,4 @@ nav:
     
     - Performance-optimization: Performance-optimization
     
-    - Experience: Experience
+    - DevOps: DevOps
