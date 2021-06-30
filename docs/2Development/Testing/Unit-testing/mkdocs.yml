@@ -2,4 +2,3 @@ nav:
     - Introduction: index.md
     - xUnit: xUnit    
     - Test-oracle: Test-oracle
-    - Gherkin-domain-specific-language: Gherkin-domain-specific-language

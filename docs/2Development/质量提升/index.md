@@ -18,7 +18,7 @@
 
 2、测试没有提缺陷并不代表软件质量好，没有bug
 
-3、一些隐藏的bug，一旦爆发，不仅难以排除，后果可能非常严重（比如之前在POC的时候，发生了 integer overflow undefined behavior，导致的问题非常诡异，排查起来非常困难，如果经验不丰富，则根本无从查起，需要考虑如何系统性地解决这类问题）
+3、一些隐藏的bug，一旦爆发，不仅难以排除，后果可能非常严重（比如C/C++ integer overflow undefined behavior，导致的问题非常诡异，排查起来非常困难，如果经验不丰富，则根本无从查起，需要考虑如何系统性地解决这类问题）
 
 4、需要借助tool来分析程序，找出常见bug
 
@@ -34,7 +34,7 @@
 
 > NOTE: 
 >
-> 一、25K star，比较流行、成熟
+> 一、25K star，说明它比较流行、成熟
 >
 > 二、它采用的软件工程方法是比较典型的，值得借鉴；
 >
@@ -42,7 +42,7 @@
 
 ### Serious testing. 
 
-Our class is heavily [unit-tested](https://github.com/nlohmann/json/tree/develop/test/src) and covers [100%](https://coveralls.io/r/nlohmann/json) of the code, including all exceptional behavior. Furthermore, we checked with [Valgrind](https://valgrind.org/) and the [Clang Sanitizers](https://clang.llvm.org/docs/index.html) that there are no memory leaks. [Google OSS-Fuzz](https://github.com/google/oss-fuzz/tree/master/projects/json) additionally runs fuzz tests against all parsers 24/7, effectively executing billions of tests so far. To maintain high quality, the project is following the [Core Infrastructure Initiative (CII) best practices](https://bestpractices.coreinfrastructure.org/projects/289).
+Our class is heavily [unit-tested](https://github.com/nlohmann/json/tree/develop/test/src) and covers [100%](https://coveralls.io/r/nlohmann/json) of the code, including all exceptional behavior. Furthermore, we checked with [Valgrind](https://valgrind.org/) and the [Clang Sanitizers](https://clang.llvm.org/docs/index.html) that there are no memory leaks. [Google OSS-Fuzz](https://github.com/google/oss-fuzz/tree/master/projects/json) additionally runs fuzz tests against all parsers 24/7, effectively executing billions of tests so far. To maintain **high quality**, the project is following the [Core Infrastructure Initiative (CII) best practices](https://bestpractices.coreinfrastructure.org/projects/289).
 
 > NOTE: 
 >
@@ -86,7 +86,7 @@ Our class is heavily [unit-tested](https://github.com/nlohmann/json/tree/develop
 
 > NOTE: 
 >
-> 1、我们有sonar，但是只使用了一个
+> 1、使用了很多code analysis tool
 
 [![Codacy Badge](https://camo.githubusercontent.com/33d1c7f925f04aefd285079d59aee79eaa96790c83a7c6572f1654b0dfa93911/68747470733a2f2f6170692e636f646163792e636f6d2f70726f6a6563742f62616467652f47726164652f6633373332623333323765333433353861306539643166653966363631663038)](https://www.codacy.com/app/nlohmann/json?utm_source=github.com&utm_medium=referral&utm_content=nlohmann/json&utm_campaign=Badge_Grade) 
 
@@ -126,7 +126,7 @@ https://bugs.chromium.org/p/oss-fuzz/issues/list
 
 
 
-## [CII Best Practices Badge Program](https://bestpractices.coreinfrastructure.org/en)
+## 最佳实践: [CII Best Practices Badge Program](https://bestpractices.coreinfrastructure.org/en)
 
 The [Linux Foundation (LF)](https://www.linuxfoundation.org/) [Core Infrastructure Initiative (CII)](https://www.coreinfrastructure.org/) Best Practices badge(徽章) is a way for Free/Libre and Open Source Software (FLOSS) projects to show that they follow best practices. 
 
@@ -170,11 +170,11 @@ The [Linux Foundation (LF)](https://www.linuxfoundation.org/) [Core Infrastructu
 
 
 
-## Test-driven Development
+## 软件开发过程: TDD && BDD
 
+### Test-driven Development(TDD)
 
-
-### baike [TDD（测试驱动开发(Test-Driven Development)）](https://baike.baidu.com/item/TDD/9064369?fr=aladdin) # TDD原则
+#### baike [TDD（测试驱动开发(Test-Driven Development)）# TDD原则](https://baike.baidu.com/item/TDD/9064369?fr=aladdin) 
 
 1、独立测试：
 
@@ -216,7 +216,15 @@ The [Linux Foundation (LF)](https://www.linuxfoundation.org/) [Core Infrastructu
 
 
 
-### wikipedia [Test-driven Development](http://en.wikipedia.org/wiki/Test-driven_development)
+#### 知乎 [TDD 与 BDD 仅仅是语言描述上的区别么？ - 程序人生的回答](https://www.zhihu.com/question/20161970/answer/1341811526) 
+
+这对于**单元测试**与开发是很有用的一种实践。因为TDD是要求在写代码之前就要想好怎么测，测什么，这解决了**可测性**低的问题。另外，TDD还可以提高代码的**测试覆盖率**，令bug在**编码阶段**就能被发现。减少上线后发现问题，修复问题的指数级增长成本。
+
+> NOTE: 
+>
+> 非常好的解释了为什么使用TDD。
+
+#### wikipedia [Test-driven Development](http://en.wikipedia.org/wiki/Test-driven_development)
 
 > NOTE: 
 >
@@ -226,19 +234,71 @@ Test-driven development (TDD) is a software development process relying on softw
 
 
 
-### 思考
+#### 思考
 
-1、C++中，如何需要编写方便测试的程序？
+一、C++中，如何需要编写方便测试的程序？
 
-header only library，include what you need。
+1、header only library，include what you need。
+
+2、封装、OOP
+
+### Behavior-driven development(BDD)
+
+#### Wikipedia [Behavior-driven development](https://en.wanweibaike.com/wiki-Behavior-driven%20development)
+
+In [software engineering](https://en.wanweibaike.com/wiki-Software_engineering), **behavior-driven development** (**BDD**) is an [agile software development](https://en.wanweibaike.com/wiki-Agile_software_development) process that encourages collaboration among developers, quality assurance testers, and customer representatives in a software project.
+
+> NOTE: 
+>
+> 一、developers, quality assurance testers, customer representatives 一同进行协作
+
+It encourages teams to use conversation and concrete examples to formalize a shared understanding of how the application should behave.[[4\]](https://en.wanweibaike.com/wiki-Behavior-driven development#cite_note-BDD_in_action-4) It emerged from [test-driven development](https://en.wanweibaike.com/wiki-Test-driven_development) (TDD).
+
+> NOTE: 
+>
+> 源自TDD，弥补其不足
 
 
 
-## BDD、TDD、DDD、ATDD
+#### 知乎 [TDD 与 BDD 仅仅是语言描述上的区别么？ - 程序人生的回答](https://www.zhihu.com/question/20161970/answer/1341811526) 
+
+**BDD（ Behaviour-Driven Development)**
+
+他们发现，如果将自然语言按照一些简单语法组织起来，代码将会非常容易解释与处理。使用这种方法可以让非技术人员、客户可以参与到需求的确认与验收当中。
+
+我们看一下两个例子
+
+```text
+Scenario: Refunded items should be returned to stock
+  Given a customer bought a black sweater from me
+    and I have three black sweaters left in stock.
+   When he returns the sweater for a refund
+   then I should have four black sweaters in stock.
+
+
+场景： 微信聊天
+假如  手机安装了微信
+当  用户打开微信
+那么  手机会出现用户的微信聊天界面
+```
+
+以上就是BDD使用的叫做Gherkin的语言，它的理念是使用自然语言来描述功能，而且强调的是使用例子来说明需求功能。是不是跟敏捷开发中的用户故事(User Story)很像？嗯，因为它们都是一个妈生的。
+
+其实只要我们回顾一下敏捷宣言，就会发现，逼弟弟干的事就是解决个体之间互动与客户协作这两个问题。
+
+#### baike [行为驱动开发](https://baike.baidu.com/item/%E8%A1%8C%E4%B8%BA%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/9424963?fromtitle=BDD&fromid=10735732&fr=aladdin)
+
+
+
+#### software [Cucumber](https://cucumber.io/)
+
+这个软件将BDD从理论带入了工程实践中。
+
+
+
+### See also
 
 zhihu [TDD 与 BDD 仅仅是语言描述上的区别么？](https://www.zhihu.com/question/20161970)
-
-baike [Behavior-Driven Development](https://baike.baidu.com/item/%E8%A1%8C%E4%B8%BA%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/9424963?fromtitle=BDD&fromid=10735732&fr=aladdin)
 
 
 
@@ -286,21 +346,11 @@ zhihu [实际软件工程中是否真的需要100%代码覆盖率（code coverag
 
 3、csdn [温故而知新：gtest单元测试工具和lcov覆盖率统计工具的结合使用](https://blog.csdn.net/u010312436/article/details/53940309)
 
-总结:
+注意:
 
 1、需要进行特殊的编译
 
 
-
-## 测试方案
-
-1、尽可能地实现所有的测试用例全自动化地执行，生成报告（通过率、覆盖率）
-
-2、开发需要自己递交测试用例、测试程序
-
-3、严格的warning、使用多种static code analysis tool
-
-4、自动部署环境
 
 
 
@@ -337,7 +387,23 @@ TODO
 
 
 
-### 接口测试
+
+
+### 如何实践
+
+1、尽可能地实现所有的测试用例全自动化地执行，生成报告（通过率、覆盖率）
+
+2、开发需要自己递交测试用例、测试程序
+
+3、严格的warning、使用多种static code analysis tool
+
+4、自动部署环境
+
+
+
+## 接口测试
+
+
 
 
 
@@ -345,7 +411,7 @@ TODO
 
 下面是一些程序分析工具。
 
-#### static code analysis
+### static code analysis
 
 商业付费的:
 
@@ -359,7 +425,7 @@ Sonar
 
 Clang Thread Safety Analysis[¶](https://clang.llvm.org/docs/ThreadSafetyAnalysis.html#thread-safety-analysis)
 
-#### dynamic code analysis
+### dynamic code analysis
 
 一、[Valgrind](https://valgrind.org/) 
 
@@ -374,6 +440,8 @@ Clang Thread Safety Analysis[¶](https://clang.llvm.org/docs/ThreadSafetyAnalysi
 > NOTE: 
 >
 > 能够发现大多数问题
+
+
 
 ## DevOps
 

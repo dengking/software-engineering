@@ -25,3 +25,7 @@
 回到我们的bug上，因为你在代码中发现了这个问题，你改变了程序的输出——程序要么就继续运行，要么崩溃。所以，这种bug就叫做薛定谔bug(Schroedinbug)。
 
 还有几种其它类型的bug没有在这里列出，例如“成长的bug(aging-related bugs)”——只有在程序运行很久之后才会出现的bug。
+
+
+
+## wanweibaike [Software bug](https://en.wanweibaike.com/wiki-Bug%20(computing))
