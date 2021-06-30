@@ -36,127 +36,94 @@ nav:
   - Introduction: Software-quality/index.md
   - Reusability:
     - Introduction: Software-quality/Reusability/index.md
+  - Readability:
+    - Introduction: Software-quality/Readability/index.md
 - Software-requirements:
-  - Introduction: Software-requirements/index.md
+  - Introduction: 0Requirements/index.md
 - Software-design:
-  - Introduction: Software-design/index.md
+  - Introduction: 1Design/index.md
   - Principle:
-    - Introduction: Software-design/Principle/index.md
+    - Introduction: 1Design/Principle/index.md
     - Abstraction:
-      - Abstraction-in-software-design: Software-design/Principle/Abstraction/Abstraction-in-software-design.md
+      - Abstraction-in-software-design: 1Design/Principle/Abstraction/Abstraction-in-software-design.md
     - Control-theory:
-      - Introduction: Software-design/Principle/Control-theory/index.md
+      - Introduction: 1Design/Principle/Control-theory/index.md
       - Inversion-of-control:
-        - Introduction: Software-design/Principle/Control-theory/Inversion-of-control/index.md
-        - wikipedia-Inversion-of-control: Software-design/Principle/Control-theory/Inversion-of-control/wikipedia-Inversion-of-control.md
-        - tutorialsteacher-Inversion-of-Control: Software-design/Principle/Control-theory/Inversion-of-control/tutorialsteacher-Inversion-of-Control.md
+        - Introduction: 1Design/Principle/Control-theory/Inversion-of-control/index.md
+        - wikipedia-Inversion-of-control: 1Design/Principle/Control-theory/Inversion-of-control/wikipedia-Inversion-of-control.md
+        - tutorialsteacher-Inversion-of-Control: 1Design/Principle/Control-theory/Inversion-of-control/tutorialsteacher-Inversion-of-Control.md
       - TODO-Control-dependency:
-        - Introduction: Software-design/Principle/Control-theory/TODO-Control-dependency/index.md
+        - Introduction: 1Design/Principle/Control-theory/TODO-Control-dependency/index.md
     - Information-hiding:
-      - Introduction: Software-design/Principle/Information-hiding/index.md
+      - Introduction: 1Design/Principle/Information-hiding/index.md
       - Transparency:
-        - Introduction: Software-design/Principle/Information-hiding/Transparency/index.md
+        - Introduction: 1Design/Principle/Information-hiding/Transparency/index.md
   - Commonality-and-variability-analysis:
-    - Introduction: Software-design/Commonality-and-variability-analysis/index.md
+    - Introduction: 1Design/Commonality-and-variability-analysis/index.md
   - Decompose-and-assemble:
-    - Introduction: Software-design/Decompose-and-assemble/index.md
+    - Introduction: 1Design/Decompose-and-assemble/index.md
   - Design-pattern:
-    - Introduction: Software-design/Design-pattern/index.md
+    - Introduction: 1Design/Design-pattern/index.md
     - Architecture-pattern:
-      - Introduction: Software-design/Design-pattern/Architecture-pattern/index.md
+      - Introduction: 1Design/Design-pattern/Architecture-pattern/index.md
       - Plugin-architecture:
-        - Introduction: Software-design/Design-pattern/Architecture-pattern/Plugin-architecture/index.md
-        - Component-based-software-engineering: Software-design/Design-pattern/Architecture-pattern/Plugin-architecture/Component-based-software-engineering.md
+        - Introduction: 1Design/Design-pattern/Architecture-pattern/Plugin-architecture/index.md
+        - Component-based-software-engineering: 1Design/Design-pattern/Architecture-pattern/Plugin-architecture/Component-based-software-engineering.md
       - Monolithic-and-micro:
-        - Introduction: Software-design/Design-pattern/Architecture-pattern/Monolithic-and-micro/index.md
+        - Introduction: 1Design/Design-pattern/Architecture-pattern/Monolithic-and-micro/index.md
       - Middleware:
-        - Introduction: Software-design/Design-pattern/Architecture-pattern/Middleware/index.md
-        - Message-oriented-middleware: Software-design/Design-pattern/Architecture-pattern/Middleware/Message-oriented-middleware.md
+        - Introduction: 1Design/Design-pattern/Architecture-pattern/Middleware/index.md
+        - Message-oriented-middleware: 1Design/Design-pattern/Architecture-pattern/Middleware/Message-oriented-middleware.md
       - Service-oriented-architecture:
-        - Introduction: Software-design/Design-pattern/Architecture-pattern/Service-oriented-architecture/index.md
+        - Introduction: 1Design/Design-pattern/Architecture-pattern/Service-oriented-architecture/index.md
         - Microservice:
-          - Introduction: Software-design/Design-pattern/Architecture-pattern/Service-oriented-architecture/Microservice/index.md
+          - Introduction: 1Design/Design-pattern/Architecture-pattern/Service-oriented-architecture/Microservice/index.md
       - Task-model:
-        - Introduction: Software-design/Design-pattern/Architecture-pattern/Task-model/index.md
+        - Introduction: 1Design/Design-pattern/Architecture-pattern/Task-model/index.md
         - Schedule:
-          - Introduction: Software-design/Design-pattern/Architecture-pattern/Task-model/Schedule/index.md
+          - Introduction: 1Design/Design-pattern/Architecture-pattern/Task-model/Schedule/index.md
           - Priority-inversion:
-            - Introduction: Software-design/Design-pattern/Architecture-pattern/Task-model/Schedule/Priority-inversion/index.md
+            - Introduction: 1Design/Design-pattern/Architecture-pattern/Task-model/Schedule/Priority-inversion/index.md
       - Multilayered-architecture:
-        - Introduction: Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/index.md
-        - Abstraction-and-architecture-and-layer: Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/Abstraction-and-architecture-and-layer.md
+        - Introduction: 1Design/Design-pattern/Architecture-pattern/Multilayered-architecture/index.md
+        - Abstraction-and-architecture-and-layer: 1Design/Design-pattern/Architecture-pattern/Multilayered-architecture/Abstraction-and-architecture-and-layer.md
         - Book-code-reading:
-          - Introduction: Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/Book-code-reading/index.md
+          - Introduction: 1Design/Design-pattern/Architecture-pattern/Multilayered-architecture/Book-code-reading/index.md
     - Pool:
-      - Introduction: Software-design/Design-pattern/Pool/index.md
+      - Introduction: 1Design/Design-pattern/Pool/index.md
       - Prefork-process-pool:
-        - Introduction: Software-design/Design-pattern/Pool/Prefork-process-pool/index.md
+        - Introduction: 1Design/Design-pattern/Pool/Prefork-process-pool/index.md
       - Memory-pool:
-        - Introduction: Software-design/Design-pattern/Pool/Memory-pool/index.md
-        - C++Memory-Pool-CTable: Software-design/Design-pattern/Pool/Memory-pool/C++Memory-Pool-CTable.md
+        - Introduction: 1Design/Design-pattern/Pool/Memory-pool/index.md
+        - C++Memory-Pool-CTable: 1Design/Design-pattern/Pool/Memory-pool/C++Memory-Pool-CTable.md
       - Connection-pool:
-        - Introduction: Software-design/Design-pattern/Pool/Connection-pool/index.md
-  - Experience: Software-design/Experience.md
-  - Unified-Modeling-Language:
-    - Introduction: Software-design/Unified-Modeling-Language/index.md
+        - Introduction: 1Design/Design-pattern/Pool/Connection-pool/index.md
+  - Experience: 1Design/Experience.md
+  - UML:
+    - Introduction: 1Design/UML/index.md
 - Software-development:
-  - Introduction: Software-development/index.md
-  - Software-development-process:
-    - Introduction: Software-development/Software-development-process/index.md
-    - Test-driven-development:
-      - Introduction: Software-development/Software-development-process/Test-driven-development/index.md
-    - TODO-Behavior-driven-development:
-      - Introduction: Software-development/Software-development-process/TODO-Behavior-driven-development/index.md
-  - Software-configuration-management:
-    - Introduction: Software-development/Software-configuration-management/index.md
+  - Introduction: 2Development/index.md
+  - Development-process:
+    - Introduction: 2Development/Development-process/index.md
+    - TDD&BDD:
+      - Introduction: 2Development/Development-process/TDD&BDD/index.md
+      - TDD:
+        - Introduction: 2Development/Development-process/TDD&BDD/TDD/index.md
+      - BDD:
+        - Introduction: 2Development/Development-process/TDD&BDD/BDD/index.md
+  - Configuration-management:
+    - Introduction: 2Development/Configuration-management/index.md
   - Software-build:
-    - Introduction: Software-development/Software-build/index.md
-  - Software-testing:
-    - Introduction: Software-development/Software-testing/index.md
-    - Test-automation:
-      - Introduction: Software-development/Software-testing/Test-automation/index.md
-      - Automated-test-framework:
-        - Introduction: Software-development/Software-testing/Test-automation/Automated-test-framework/index.md
-      - Test-Anything-Protocol:
-        - Introduction: Software-development/Software-testing/Test-automation/Test-Anything-Protocol/index.md
-    - Unit-testing:
-      - Introduction: Software-development/Software-testing/Unit-testing/index.md
-      - Test-oracle: Software-development/Software-testing/Unit-testing/Test-oracle.md
-      - xUnit:
-        - Introduction: Software-development/Software-testing/Unit-testing/xUnit/index.md
-      - List-of-unit-testing-frameworks: Software-development/Software-testing/Unit-testing/List-of-unit-testing-frameworks.md
-      - Gherkin-domain-specific-language:
-        - Introduction: Software-development/Software-testing/Unit-testing/Gherkin-domain-specific-language/index.md
-    - Smoke-testing:
-      - Introduction: Software-development/Software-testing/Smoke-testing/index.md
-    - Fuzz-testing:
-      - Introduction: Software-development/Software-testing/Fuzz-testing/index.md
-      - google-oss-fuzz:
-        - Introduction: Software-development/Software-testing/Fuzz-testing/google-oss-fuzz/index.md
-    - Heisenbug: Software-development/Software-testing/Heisenbug.md
-    - Code-coverage:
-      - Introduction: Software-development/Software-testing/Code-coverage/index.md
-  - Software-quality-assurance:
-    - Introduction: Software-development/Software-quality-assurance/index.md
+    - Introduction: 2Development/Software-build/index.md
+  - QA:
+    - Introduction: 2Development/QA/index.md
+  - "\u8D28\u91CF\u63D0\u5347":
+    - Introduction: "2Development/\u8D28\u91CF\u63D0\u5347/index.md"
 - Software-distribution:
-  - Introduction: Software-distribution/index.md
-  - Software-release-life-cycle: Software-distribution/Software-release-life-cycle.md
+  - Introduction: 3Distribution/index.md
+  - Software-release-life-cycle: 3Distribution/Software-release-life-cycle.md
 - TODO-Software-analysis:
   - Introduction: TODO-Software-analysis/index.md
-- Performance-optimization:
-  - Introduction: Performance-optimization/index.md
-  - Benchmark:
-    - Introduction: Performance-optimization/Benchmark/index.md
-  - Memory:
-    - Introduction: Performance-optimization/Memory/index.md
-    - Small-Buffer-Optimization:
-      - Introduction: Performance-optimization/Memory/Small-Buffer-Optimization/index.md
-      - riptutorial-C++Small-Object-Optimization:
-        - Introduction: Performance-optimization/Memory/Small-Buffer-Optimization/riptutorial-C++Small-Object-Optimization/index.md
-    - We-Know-Where-You-Live-optimization:
-      - Introduction: Performance-optimization/Memory/We-Know-Where-You-Live-optimization/index.md
-  - Bound:
-    - Introduction: Performance-optimization/Bound/index.md
 - DevOps:
   - Introduction: DevOps/index.md
   - 12factor:
