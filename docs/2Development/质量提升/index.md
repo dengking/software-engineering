@@ -358,22 +358,18 @@ zhihu [实际软件工程中是否真的需要100%代码覆盖率（code coverag
 
 
 
-
-
 ## 单元测试
 
-工具
+### 工具
 
-|                                                              | 优势                                                         |      |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
-| [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top) | header only library、无外部依赖、多范式测试框架，可用于单元测试、TDD 和 BDD |      |
-| [Googletest](https://google.github.io/googletest/)           | 功能全面，比较流行                                           |      |
-|                                                              |                                                              |      |
-|                                                              |                                                              |      |
+|                                                              | 优势                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top) | header only library、无外部依赖、多范式测试框架，可用于单元测试、TDD 和 BDD |
+| [Googletest](https://google.github.io/googletest/)           | 功能全面，比较流行                                           |
 
 ### xUnit framework
 
-基本上所有的单元测试库，都是参考的这个框架。
+基本上所有的单元测试库，都是参考的这个框架，了解了这个框架，基本上就入门了所有的单元测试库。
 
 
 
@@ -381,7 +377,7 @@ zhihu [实际软件工程中是否真的需要100%代码覆盖率（code coverag
 
 [Googletest Primer](https://google.github.io/googletest/primer.html)
 
-
+下面结合具体的例子来说明Googletest的使用；
 
 对类进行测试、对函数进行测试；
 
