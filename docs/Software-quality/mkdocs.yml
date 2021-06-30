@@ -1,4 +1,4 @@
 nav:
     - Introduction: index.md
-    ########## 重用性##########
-    - Reusability: Reusability
+    - Reusability: Reusability #重用性
+    - Readability: Readability

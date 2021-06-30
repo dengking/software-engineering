@@ -2,19 +2,18 @@ nav:
     - Introduction: index.md
     
     - Software-engineering: Software-engineering
-    ########## 软件质量，它指导着我们进行设计、开发##########    
-    - Software-quality: Software-quality
     
-    - Software-requirements: Software-requirements
+    - Software-quality: Software-quality # 软件质量，它指导着我们进行设计、开发
     
-    - Software-design: Software-design
+    - Software-requirements: 0Requirements
     
-    - Software-development: Software-development
+    - Software-design: 1Design
     
-    - Software-distribution: Software-distribution
+    - Software-development: 2Development
+    
+    - Software-distribution: 3Distribution
     
     - TODO-Software-analysis: TODO-Software-analysis
     
-    - Performance-optimization: Performance-optimization
-    
     - DevOps: DevOps
+    
