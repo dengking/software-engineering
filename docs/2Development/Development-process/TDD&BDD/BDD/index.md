@@ -62,8 +62,6 @@ It emerged from [test-driven development](https://en.wanweibaike.com/wiki-Test-d
 
 
 
-
-
 ## software [Cucumber](https://cucumber.io/)
 
 这个软件将BDD从理论带入了工程实践中。

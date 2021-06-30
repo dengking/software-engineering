@@ -286,6 +286,16 @@ Scenario: Refunded items should be returned to stock
 
 其实只要我们回顾一下敏捷宣言，就会发现，逼弟弟干的事就是解决个体之间互动与客户协作这两个问题。
 
+**BDD的需求研讨会(Specification Workshops)**
+
+那么，我们使用这种语言，把需求一个个用例子列出来，客户/产品、开发、测试三方一起讨论与确认。
+
+> NOTE: 
+>
+> 三方可以同时进行协作，使用一种三方都能够理解的DSL
+
+
+
 #### baike [行为驱动开发](https://baike.baidu.com/item/%E8%A1%8C%E4%B8%BA%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/9424963?fromtitle=BDD&fromid=10735732&fr=aladdin)
 
 
@@ -306,13 +316,9 @@ zhihu [TDD 与 BDD 仅仅是语言描述上的区别么？](https://www.zhihu.co
 
 ### What is code coverage
 
-
-
 zhihu [什么是代码覆盖率？](https://www.zhihu.com/question/22244568)
 
 > 是软件测试中的一种度量，描述程序中源代码被测试的比例和程度，所得比例称为**代码覆盖率**。在做**单元测试**时，代码覆盖率常常被拿来作为衡量测试好坏的指标，甚至，用代码覆盖率来考核测试任务完成情况，比如，代码覆盖率必须达到80％或 90％。
-
-
 
 
 
@@ -361,9 +367,19 @@ zhihu [实际软件工程中是否真的需要100%代码覆盖率（code coverag
 |                                                              | 优势                                                         |      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
 | [Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md#top) | header only library、无外部依赖、多范式测试框架，可用于单元测试、TDD 和 BDD |      |
-| [Googletest](https://google.github.io/googletest/)           |                                                              |      |
+| [Googletest](https://google.github.io/googletest/)           | 功能全面，比较流行                                           |      |
 |                                                              |                                                              |      |
 |                                                              |                                                              |      |
+
+### xUnit framework
+
+基本上所有的单元测试库，都是参考的这个框架。
+
+
+
+### [Googletest](https://google.github.io/googletest/) 
+
+[Googletest Primer](https://google.github.io/googletest/primer.html)
 
 
 
@@ -371,19 +387,11 @@ zhihu [实际软件工程中是否真的需要100%代码覆盖率（code coverag
 
 测试用例编写（除了基本的功能测试，还需要测试 极端值、异常）；
 
+
+
 #### 案例: 
 
 microsoft [Use the C++ Core Guidelines checkers](https://docs.microsoft.com/en-us/cpp/code-quality/using-the-cpp-core-guidelines-checkers?view=msvc-160)
-
-
-
-TODO
-
-1、测试程序 和 源程序 如何放
-
-#### [Googletest](https://google.github.io/googletest/) 
-
-[Googletest Primer](https://google.github.io/googletest/primer.html)
 
 
 
@@ -399,11 +407,9 @@ TODO
 
 4、自动部署环境
 
+#### 思考讨论
 
-
-## 接口测试
-
-
+1、测试程序 和 源程序 如何放
 
 
 
