@@ -369,25 +369,476 @@ zhihu [实际软件工程中是否真的需要100%代码覆盖率（code coverag
 
 ### xUnit framework
 
-基本上所有的单元测试库，都是参考的这个框架，了解了这个框架，基本上就入门了所有的单元测试库。
+基本上所有的单元测试库(包括JUnit、PyUnit)，都是参考的这个框架，了解了这个框架，基本上就入门了所有的单元测试库。
 
+#### wikipedia [xUnit](https://en.wikipedia.org/wiki/XUnit) # xUnit architecture
 
+> NOTE: architecture这对于我们掌握unit testing framework非常重要；xUnit的architecture是非常经典的。
+>
+
+All xUnit frameworks share the following basic component architecture, with some varied implementation details.[[1\]](https://en.wikipedia.org/wiki/XUnit#cite_note-1)
+
+##### Test runner
+
+A [test runner](https://en.wikipedia.org/w/index.php?title=Test_runner&action=edit&redlink=1) is an executable program that runs tests implemented using an **xUnit** framework and reports the test results.[[2\]](https://en.wikipedia.org/wiki/XUnit#cite_note-2)
+
+##### Test case
+
+A [test case](https://en.wikipedia.org/wiki/Test_case) is the most elemental class. All unit tests are inherited from here.
+
+##### Test fixtures
+
+> NOTE: "fixture"在此的含义是"装配"，在下面使用的是context，显然context的含义是更加准确的。
+>
+> 为什么"return to the original state after the tests"？
+>
+> 因为要执行多个test，"return to the original state"能够保证后续的test能够继续执行。
+>
+> 在后面的"test execution"章节将对它有更好的描述。
+
+A [test fixture](https://en.wikipedia.org/wiki/Test_fixture) (also known as a test context) is the set of [preconditions](https://en.wikipedia.org/wiki/Precondition) or state needed to run a test. The developer should set up a known good state before the tests, and return to the original state after the tests.
+
+##### Test suites
+
+A [test suite](https://en.wikipedia.org/wiki/Test_suite) is a set of tests that all share the same fixture. The order of the tests shouldn't matter.
+
+##### Test execution
+
+The execution of an individual unit test proceeds as follows:
+
+```C++
+setup(); /* First, we should prepare our 'world' to make an isolated environment for testing */
+...
+/* Body of test - Here we make all the tests */
+...
+teardown(); /* At the end, whether we succeed or fail, we should clean up our 'world' to 
+not disturb other tests or code */
+```
+
+The `setup()` and `teardown()` methods serve to initialize and clean up **test fixtures**.
+
+> NOTE:
+>
+> `setup()`
+>
+> `teardown()`
+
+##### Test result formatter
+
+A [test runner](https://en.wikipedia.org/w/index.php?title=Test_runner&action=edit&redlink=1) produces results in one or more output formats. In addition to a plain, human-readable format, there is often a test result formatter that produces [XML](https://en.wikipedia.org/wiki/XML) output.
+
+##### Assertions
+
+An [assertion](https://en.wikipedia.org/wiki/Assertion_(computing)) is a function or macro that verifies the behavior (or the state) of the unit under test. Usually an assertion expresses a [logical condition](https://en.wikipedia.org/wiki/Logical_conditional) that is true for results expected in a correctly running [system under test](https://en.wikipedia.org/wiki/System_under_test) (SUT). Failure of an assertion typically throws an [exception](https://en.wikipedia.org/wiki/Exception_handling), aborting the execution of the current test.
 
 ### [Googletest](https://google.github.io/googletest/) 
 
-[Googletest Primer](https://google.github.io/googletest/primer.html)
+http://google.github.io/googletest/
+
+在其官网上，有详细的文档说明。
+
+### [Googletest Primer](http://google.github.io/googletest/primer.html)
+
+
+
+#### Basic Concepts
+
+> NOTE: 
+>
+> 简单介绍这些概念，和xUnit对应
+
+| 概念           | 解释 |                                                              |
+| -------------- | ---- | ------------------------------------------------------------ |
+| *assertions*   |      | [Assertions Reference](http://google.github.io/googletest/reference/assertions.html) |
+| *Tests*        |      |                                                              |
+| *test suite*   |      |                                                              |
+| *test fixture* |      |                                                              |
+| *test program* |      |                                                              |
+
+
+
+#### Assertions
+
+`ASSERT_*` versions generate fatal failures when they fail, and **abort the current function**. 
+
+`EXPECT_*` versions generate nonfatal failures, which don’t abort the current function.
+
+```C++
+ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
+
+for (int i = 0; i < x.size(); ++i) {
+  EXPECT_EQ(x[i], y[i]) << "Vectors x and y differ at index " << i;
+}
+```
+
+#### Simple Tests
+
+一个*test*的基本格式
+
+```C++
+TEST(TestSuiteName, TestName) {
+  ... test body ...
+}
+```
+
+For example, let’s take a simple integer function:
+
+```c++
+int Factorial(int n);  // Returns the factorial of n
+```
+
+A test suite for this function might look like:
+
+```c++
+// Tests factorial of 0.
+TEST(FactorialTest, HandlesZeroInput) {
+  EXPECT_EQ(Factorial(0), 1);
+}
+
+// Tests factorial of positive numbers.
+TEST(FactorialTest, HandlesPositiveInput) {
+  EXPECT_EQ(Factorial(1), 1);
+  EXPECT_EQ(Factorial(2), 2);
+  EXPECT_EQ(Factorial(3), 6);
+  EXPECT_EQ(Factorial(8), 40320);
+}
+```
+
+googletest groups the test results by test suites, so logically related tests should be in the same test suite; 
+
+
+
+#### Test Fixtures: Using the Same Data Configuration for Multiple Tests
+
+If you find yourself writing two or more tests that operate on similar data, you can use a *test fixture*. This allows you to reuse the same configuration of objects for several different tests.
+
+> NOTE: 
+>
+> 多个test使用相同的"Data Configuration"
+
+```c++
+TEST_F(TestFixtureName, TestName) {
+  ... test body ...
+}
+```
+
+As an example, let’s write tests for a FIFO queue class named `Queue`, which has the following interface:
+
+```C++
+template <typename E>  // E is the element type.
+class Queue {
+ public:
+  Queue();
+  void Enqueue(const E& element);
+  E* Dequeue();  // Returns NULL if the queue is empty.
+  size_t size() const;
+  ...
+};
+```
+
+
+
+```c++
+class QueueTest : public ::testing::Test {
+ protected:
+  void SetUp() override {
+     q1_.Enqueue(1);
+     q2_.Enqueue(2);
+     q2_.Enqueue(3);
+  }
+
+  // void TearDown() override {}
+
+  Queue<int> q0_;
+  Queue<int> q1_;
+  Queue<int> q2_;
+};
+```
+
+
+
+```C++
+TEST_F(QueueTest, IsEmptyInitially) {
+  EXPECT_EQ(q0_.size(), 0);
+}
+
+TEST_F(QueueTest, DequeueWorks) {
+  int* n = q0_.Dequeue();
+  EXPECT_EQ(n, nullptr);
+
+  n = q1_.Dequeue();
+  ASSERT_NE(n, nullptr);
+  EXPECT_EQ(*n, 1);
+  EXPECT_EQ(q1_.size(), 0);
+  delete n;
+
+  n = q2_.Dequeue();
+  ASSERT_NE(n, nullptr);
+  EXPECT_EQ(*n, 2);
+  EXPECT_EQ(q2_.size(), 1);
+  delete n;
+}
+```
+
+When these tests run, the following happens:
+
+1. googletest constructs a `QueueTest` object (let’s call it `t1`).
+2. `t1.SetUp()` initializes `t1`.
+3. The first test (`IsEmptyInitially`) runs on `t1`.
+4. `t1.TearDown()` cleans up after the test finishes.
+5. `t1` is destructed.
+6. The above steps are repeated on another `QueueTest` object, this time running the `DequeueWorks` test.
+
+
+
+#### Invoking the Tests
+
+```c++
+#include "this/package/foo.h"
+
+#include "gtest/gtest.h"
+
+namespace my {
+namespace project {
+namespace {
+
+// The fixture for testing class Foo.
+class FooTest : public ::testing::Test {
+ protected:
+  // You can remove any or all of the following functions if their bodies would
+  // be empty.
+
+  FooTest() {
+     // You can do set-up work for each test here.
+  }
+
+  ~FooTest() override {
+     // You can do clean-up work that doesn't throw exceptions here.
+  }
+
+  // If the constructor and destructor are not enough for setting up
+  // and cleaning up each test, you can define the following methods:
+
+  void SetUp() override {
+     // Code here will be called immediately after the constructor (right
+     // before each test).
+  }
+
+  void TearDown() override {
+     // Code here will be called immediately after each test (right
+     // before the destructor).
+  }
+
+  // Class members declared here can be used by all tests in the test suite
+  // for Foo.
+};
+
+// Tests that the Foo::Bar() method does Abc.
+TEST_F(FooTest, MethodBarDoesAbc) {
+  const std::string input_filepath = "this/package/testdata/myinputfile.dat";
+  const std::string output_filepath = "this/package/testdata/myoutputfile.dat";
+  Foo f;
+  EXPECT_EQ(f.Bar(input_filepath, output_filepath), 0);
+}
+
+// Tests that Foo does Xyz.
+TEST_F(FooTest, DoesXyz) {
+  // Exercises the Xyz feature of Foo.
+}
+
+}  // namespace
+}  // namespace project
+}  // namespace my
+
+int main(int argc, char **argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}
+```
+
+
+
+### [Advanced googletest Topics](http://google.github.io/googletest/advanced.html)
+
+This document will show you more assertions as well as how to construct complex failure messages, propagate fatal failures, reuse and speed up your test fixtures, and use various flags with your tests.
+
+#### More Assertions
+
+> NOTE: 
+>
+> 直接看 [Assertions Reference](http://google.github.io/googletest/reference/assertions.html)
+
+#### Teaching googletest How to Print Your Values
+
+> NOTE: 
+>
+> overload `<<` 来让输出更加友好
+
+```c++
+#include <ostream>
+
+namespace foo {
+
+class Bar {  // We want googletest to be able to print instances of this.
+...
+  // Create a free inline friend function.
+  friend std::ostream& operator<<(std::ostream& os, const Bar& bar) {
+    return os << bar.DebugString();  // whatever needed to print bar to os
+  }
+};
+
+// If you can't declare the function in the class it's important that the
+// << operator is defined in the SAME namespace that defines Bar.  C++'s look-up
+// rules rely on that.
+std::ostream& operator<<(std::ostream& os, const Bar& bar) {
+  return os << bar.DebugString();  // whatever needed to print bar to os
+}
+
+}  // namespace foo
+```
+
+#### Death Tests
+
+#### Sharing Resources Between Tests in the Same Test Suite
+
+#### Global Set-Up and Tear-Down
+
+#### Value-Parameterized Tests
+
+
+
+#### Testing Private Code
+
+
+
+#### Extending googletest by Handling Test Events
+
+
+
+#### Sanitizer Integration
+
+> NOTE: 
+>
+> 这是符合最佳实践的
+
+### [googletest Assertions Reference](http://google.github.io/googletest/reference/assertions.html)
+
+All assertion macros support streaming a custom failure message into them with the `<<` operator, for example:
+
+```c++
+EXPECT_TRUE(my_condition) << "My condition is not true";
+```
+
+#### Explicit Success and Failure
+
+```c++
+switch(expression) {
+  case 1:
+    ... some checks ...
+  case 2:
+    ... some other checks ...
+  default:
+    FAIL() << "We shouldn't get here.";
+}
+```
+
+#### Generalized Assertion
+
+The following assertion allows [matchers](http://google.github.io/googletest/reference/matchers.html) to be used to verify values.
+
+> NOTE: 
+>
+> 需要使用到 [matcher](http://google.github.io/googletest/reference/matchers.html) 
+
+```C++
+#include "gmock/gmock.h"
+
+using ::testing::AllOf;
+using ::testing::Gt;
+using ::testing::Lt;
+using ::testing::MatchesRegex;
+using ::testing::StartsWith;
+
+...
+EXPECT_THAT(value1, StartsWith("Hello"));
+EXPECT_THAT(value2, MatchesRegex("Line \\d+"));
+ASSERT_THAT(value3, AllOf(Gt(5), Lt(10)));
+```
+
+#### Boolean Conditions
+
+```
+EXPECT_TRUE(condition)
+ASSERT_TRUE(condition)
+```
+
+Verifies that *`condition`* is true.
+
+
+
+```
+EXPECT_FALSE(condition)
+ASSERT_FALSE(condition)
+```
+
+Verifies that *`condition`* is false.
+
+
+
+#### Binary Comparison
+
+`EXPECT_NE`
+
+```
+EXPECT_EQ(val1,val2)
+ASSERT_EQ(val1,val2)
+```
+
+Verifies that *`val1`*`==`*`val2`*.
+
+`EXPECT_LT`
+
+Verifies that *`val1`*`<`*`val2`*.
+
+#### String Comparison
+
+#### Floating-Point Comparison
+
+#### Exception Assertions
+
+The following assertions verify that a piece of code throws, or does not throw, an exception. Usage requires exceptions to be enabled in the build environment.
+
+```c++
+EXPECT_NO_THROW({
+  int n = 5;
+  DoSomething(&n);
+});
+```
+
+#### Death Assertions
+
+The following assertions verify that a piece of code causes the process to terminate. For context, see [Death Tests](http://google.github.io/googletest/advanced.html#death-tests).
+
+### [googletest Matchers Reference](http://google.github.io/googletest/reference/matchers.html)
+
+> NOTE: 
+>
+> 其实相当于overload `==`
+
+| Macro                                | Description                                                  |
+| :----------------------------------- | :----------------------------------------------------------- |
+| `EXPECT_THAT(actual_value, matcher)` | Asserts that `actual_value` matches `matcher`.               |
+| `ASSERT_THAT(actual_value, matcher)` | The same as `EXPECT_THAT(actual_value, matcher)`, except that it generates a **fatal** failure. |
+
+
+
+### 案例: 
 
 下面结合具体的例子来说明Googletest的使用；
 
-对类进行测试、对函数进行测试；
+[microsoft](https://github.com/microsoft)/**[GSL](https://github.com/microsoft/GSL)**
 
-测试用例编写（除了基本的功能测试，还需要测试 极端值、异常）；
-
-
-
-#### 案例: 
-
-microsoft [Use the C++ Core Guidelines checkers](https://docs.microsoft.com/en-us/cpp/code-quality/using-the-cpp-core-guidelines-checkers?view=msvc-160)
+![](./gsl-unit-test.jpg)
 
 
 
@@ -403,9 +854,17 @@ microsoft [Use the C++ Core Guidelines checkers](https://docs.microsoft.com/en-u
 
 4、自动部署环境
 
-#### 思考讨论
+5、测试用例编写（除了基本的功能测试，还需要测试 极端值、异常）；
 
-1、测试程序 和 源程序 如何放
+6、最佳实践 rigtorp [C++ Best Practices](https://rigtorp.se/cpp-best-practices/) :
+
+> Build and run your tests with [sanitizers](https://github.com/google/sanitizers) enabled.
+
+
+
+## 思考讨论
+
+1、测试程序 和 源程序 如何放？
 
 
 
@@ -444,6 +903,4 @@ Clang Thread Safety Analysis[¶](https://clang.llvm.org/docs/ThreadSafetyAnalysi
 > 能够发现大多数问题
 
 
-
-## DevOps
 
