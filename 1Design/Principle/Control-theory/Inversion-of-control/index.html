@@ -1,0 +1,2634 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Project documentation with Markdown.">
+      
+      
+      
+        <meta name="author" content="DengKing">
+      
+      
+        <link rel="canonical" href="https://dengking.github.io/software-engineering/1Design/Principle/Control-theory/Inversion-of-control/">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+    
+    
+      
+        <title>Introduction - software-engineering</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-27795084-5","mkdocs.org"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inversion#of#control" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://dengking.github.io/software-engineering" title="software-engineering" class="md-header__button md-logo" aria-label="software-engineering">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            software-engineering
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/dengking/software-engineering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://dengking.github.io/software-engineering" title="software-engineering" class="md-nav__button md-logo" aria-label="software-engineering">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    software-engineering
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/dengking/software-engineering" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Software-engineering
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software-engineering" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Software-engineering
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Software-engineering/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Software-quality
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software-quality" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Software-quality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Software-quality/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Reusability
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reusability" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reusability
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Software-quality/Reusability/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Readability
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Readability" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Readability
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Software-quality/Readability/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Software-requirements
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software-requirements" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Software-requirements
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../0Requirements/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Software-design
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software-design" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Software-design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" checked>
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Principle
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Principle" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Principle
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_2" type="checkbox" id="__nav_5_2_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2_2">
+        Abstraction
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Abstraction" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Abstraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abstraction/Abstraction-in-software-design/" class="md-nav__link">
+        Abstraction-in-software-design
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_3" type="checkbox" id="__nav_5_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_5_2_3">
+        Control-theory
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Control-theory" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Control-theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_3_2" type="checkbox" id="__nav_5_2_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_5_2_3_2">
+        Inversion-of-control
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Inversion-of-control" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Inversion-of-control
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Introduction
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ioc" class="md-nav__link">
+    IoC是一种思想
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what#is#ioc" class="md-nav__link">
+    What is IoC?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is IoC?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ioc_1" class="md-nav__link">
+    IoC的优势/价值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo#ioc" class="md-nav__link">
+    TODO: IoC的实现方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#martinfowler#inversion#of#control#containers#and#the#dependency#injection#pattern" class="md-nav__link">
+    martinfowler Inversion of Control Containers and the Dependency Injection pattern
+  </a>
+  
+    <nav class="md-nav" aria-label="martinfowler Inversion of Control Containers and the Dependency Injection pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components#and#services" class="md-nav__link">
+    Components and Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a#naive#example" class="md-nav__link">
+    A Naive Example
+  </a>
+  
+    <nav class="md-nav" aria-label="A Naive Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugin" class="md-nav__link">
+    plugin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inversion#of#control_1" class="md-nav__link">
+    Inversion of Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forms#of#dependency#injection" class="md-nav__link">
+    Forms of Dependency Injection
+  </a>
+  
+    <nav class="md-nav" aria-label="Forms of Dependency Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructor#injection#with#picocontainer" class="md-nav__link">
+    Constructor Injection with PicoContainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setter#injection#with#spring" class="md-nav__link">
+    Setter Injection with Spring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface#injection" class="md-nav__link">
+    Interface Injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wikipedia-Inversion-of-control/" class="md-nav__link">
+        wikipedia-Inversion-of-control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorialsteacher-Inversion-of-Control/" class="md-nav__link">
+        tutorialsteacher-Inversion-of-Control
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_3_3" type="checkbox" id="__nav_5_2_3_3" >
+      
+      <label class="md-nav__link" for="__nav_5_2_3_3">
+        TODO-Control-dependency
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TODO-Control-dependency" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_2_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          TODO-Control-dependency
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TODO-Control-dependency/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_4" type="checkbox" id="__nav_5_2_4" >
+      
+      <label class="md-nav__link" for="__nav_5_2_4">
+        Information-hiding
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Information-hiding" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Information-hiding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information-hiding/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2_4_2" type="checkbox" id="__nav_5_2_4_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2_4_2">
+        Transparency
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Transparency" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_2_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Transparency
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information-hiding/Transparency/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      <label class="md-nav__link" for="__nav_5_3">
+        Commonality-and-variability-analysis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Commonality-and-variability-analysis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Commonality-and-variability-analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Commonality-and-variability-analysis/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      <label class="md-nav__link" for="__nav_5_4">
+        Decompose-and-assemble
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Decompose-and-assemble" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Decompose-and-assemble
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Decompose-and-assemble/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      <label class="md-nav__link" for="__nav_5_5">
+        Design-pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Design-pattern" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Design-pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2">
+        Architecture-pattern
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Architecture-pattern" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Architecture-pattern
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_2" type="checkbox" id="__nav_5_5_2_2" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_2">
+        Plugin-architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Plugin-architecture" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Plugin-architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Plugin-architecture/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Plugin-architecture/Component-based-software-engineering/" class="md-nav__link">
+        Component-based-software-engineering
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_3" type="checkbox" id="__nav_5_5_2_3" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_3">
+        Monolithic-and-micro
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Monolithic-and-micro" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Monolithic-and-micro
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Monolithic-and-micro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_4" type="checkbox" id="__nav_5_5_2_4" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_4">
+        Middleware
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Middleware" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Middleware
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Middleware/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Middleware/Message-oriented-middleware/" class="md-nav__link">
+        Message-oriented-middleware
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_5" type="checkbox" id="__nav_5_5_2_5" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_5">
+        Service-oriented-architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Service-oriented-architecture" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Service-oriented-architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Service-oriented-architecture/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_5_2" type="checkbox" id="__nav_5_5_2_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_5_2">
+        Microservice
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Microservice" data-md-level="5">
+        <label class="md-nav__title" for="__nav_5_5_2_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Microservice
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Service-oriented-architecture/Microservice/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_6" type="checkbox" id="__nav_5_5_2_6" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_6">
+        Task-model
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Task-model" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Task-model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Task-model/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_6_2" type="checkbox" id="__nav_5_5_2_6_2" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_6_2">
+        Schedule
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Schedule" data-md-level="5">
+        <label class="md-nav__title" for="__nav_5_5_2_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Schedule
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Task-model/Schedule/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_6_2_2" type="checkbox" id="__nav_5_5_2_6_2_2" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_6_2_2">
+        Priority-inversion
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Priority-inversion" data-md-level="6">
+        <label class="md-nav__title" for="__nav_5_5_2_6_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Priority-inversion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Task-model/Schedule/Priority-inversion/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_7" type="checkbox" id="__nav_5_5_2_7" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_7">
+        Multilayered-architecture
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Multilayered-architecture" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Multilayered-architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Multilayered-architecture/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Multilayered-architecture/Abstraction-and-architecture-and-layer/" class="md-nav__link">
+        Abstraction-and-architecture-and-layer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_2_7_3" type="checkbox" id="__nav_5_5_2_7_3" >
+      
+      <label class="md-nav__link" for="__nav_5_5_2_7_3">
+        Book-code-reading
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Book-code-reading" data-md-level="5">
+        <label class="md-nav__title" for="__nav_5_5_2_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Book-code-reading
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Architecture-pattern/Multilayered-architecture/Book-code-reading/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3" type="checkbox" id="__nav_5_5_3" >
+      
+      <label class="md-nav__link" for="__nav_5_5_3">
+        Pool
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Pool" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Pool
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Pool/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3_2" type="checkbox" id="__nav_5_5_3_2" >
+      
+      <label class="md-nav__link" for="__nav_5_5_3_2">
+        Prefork-process-pool
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Prefork-process-pool" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Prefork-process-pool
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Pool/Prefork-process-pool/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3_3" type="checkbox" id="__nav_5_5_3_3" >
+      
+      <label class="md-nav__link" for="__nav_5_5_3_3">
+        Memory-pool
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Memory-pool" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Memory-pool
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Pool/Memory-pool/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Pool/Memory-pool/C%2B%2BMemory-Pool-CTable/" class="md-nav__link">
+        C++Memory-Pool-CTable
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5_3_4" type="checkbox" id="__nav_5_5_3_4" >
+      
+      <label class="md-nav__link" for="__nav_5_5_3_4">
+        Connection-pool
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Connection-pool" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Connection-pool
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Design-pattern/Pool/Connection-pool/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Experience/" class="md-nav__link">
+        Experience
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+      
+      <label class="md-nav__link" for="__nav_5_7">
+        UML
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="UML" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          UML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../UML/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Software-development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software-development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Software-development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        Development-process
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development-process" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Development-process
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/Development-process/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_2" type="checkbox" id="__nav_6_2_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2_2">
+        TDD&BDD
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TDD&BDD" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          TDD&BDD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/Development-process/TDD%26BDD/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_2_2" type="checkbox" id="__nav_6_2_2_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2_2_2">
+        TDD
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TDD" data-md-level="4">
+        <label class="md-nav__title" for="__nav_6_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          TDD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/Development-process/TDD%26BDD/TDD/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_2_3" type="checkbox" id="__nav_6_2_2_3" >
+      
+      <label class="md-nav__link" for="__nav_6_2_2_3">
+        BDD
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="BDD" data-md-level="4">
+        <label class="md-nav__title" for="__nav_6_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          BDD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/Development-process/TDD%26BDD/BDD/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_2_3_2" type="checkbox" id="__nav_6_2_2_3_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2_2_3_2">
+        software-Cucumber
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="software-Cucumber" data-md-level="5">
+        <label class="md-nav__title" for="__nav_6_2_2_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          software-Cucumber
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/Development-process/TDD%26BDD/BDD/software-Cucumber/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+      
+      <label class="md-nav__link" for="__nav_6_3">
+        Configuration-management
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configuration-management" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration-management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/Configuration-management/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" >
+      
+      <label class="md-nav__link" for="__nav_6_4">
+        Software-build
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software-build" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Software-build
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/Software-build/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      <label class="md-nav__link" for="__nav_6_5">
+        QA
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="QA" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          QA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/QA/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_6" type="checkbox" id="__nav_6_6" >
+      
+      <label class="md-nav__link" for="__nav_6_6">
+        质量提升
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="质量提升" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_6">
+          <span class="md-nav__icon md-icon"></span>
+          质量提升
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2Development/%E8%B4%A8%E9%87%8F%E6%8F%90%E5%8D%87/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Software-distribution
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Software-distribution" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Software-distribution
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3Distribution/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3Distribution/Software-release-life-cycle/" class="md-nav__link">
+        Software-release-life-cycle
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        TODO-Software-analysis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TODO-Software-analysis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          TODO-Software-analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../TODO-Software-analysis/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        DevOps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DevOps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          DevOps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../DevOps/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      <label class="md-nav__link" for="__nav_9_2">
+        12factor
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="12factor" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          12factor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../DevOps/12factor/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ioc" class="md-nav__link">
+    IoC是一种思想
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what#is#ioc" class="md-nav__link">
+    What is IoC?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is IoC?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ioc_1" class="md-nav__link">
+    IoC的优势/价值
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo#ioc" class="md-nav__link">
+    TODO: IoC的实现方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#martinfowler#inversion#of#control#containers#and#the#dependency#injection#pattern" class="md-nav__link">
+    martinfowler Inversion of Control Containers and the Dependency Injection pattern
+  </a>
+  
+    <nav class="md-nav" aria-label="martinfowler Inversion of Control Containers and the Dependency Injection pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components#and#services" class="md-nav__link">
+    Components and Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a#naive#example" class="md-nav__link">
+    A Naive Example
+  </a>
+  
+    <nav class="md-nav" aria-label="A Naive Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugin" class="md-nav__link">
+    plugin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inversion#of#control_1" class="md-nav__link">
+    Inversion of Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forms#of#dependency#injection" class="md-nav__link">
+    Forms of Dependency Injection
+  </a>
+  
+    <nav class="md-nav" aria-label="Forms of Dependency Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructor#injection#with#picocontainer" class="md-nav__link">
+    Constructor Injection with PicoContainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setter#injection#with#spring" class="md-nav__link">
+    Setter Injection with Spring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface#injection" class="md-nav__link">
+    Interface Injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="inversion#of#control">Inversion of control</h1>
+<h2 id="ioc">IoC是一种思想</h2>
+<p>“inversion of control”即“控制反转”。IoC是一种思想（或者说 理念），IoC的实现有多种方式，很多framework中都采用了IoC的思想或受到IoC的影响。正如在tutorialsteacher <a href="https://www.tutorialsteacher.com/ioc/inversion-of-control">Inversion of Control</a>中所总结的</p>
+<blockquote>
+<p>IoC is a principle, not a pattern. It just gives high-level design guidelines but does not give implementation details. You are free to implement the IoC principle the way you want.</p>
+</blockquote>
+<h2 id="what#is#ioc">What is IoC?</h2>
+<p>关于它的第一个问题就是“what aspect of control are they inverting”，即“反转的是什么控制”，这个问题需要结合具体的例子来进行回答，本章基于如下文章：</p>
+<ul>
+<li>入门读物：martinfowler <a href="https://martinfowler.com/articles/injection.html">Inversion of Control Containers and the Dependency Injection pattern</a></li>
+<li>总结：维基百科<a href="https://en.wikipedia.org/wiki/Inversion_of_control">Inversion of control</a></li>
+<li>总结：stackoverflow <a href="https://stackoverflow.com/questions/3058/what-is-inversion-of-control">What is Inversion of Control?</a></li>
+</ul>
+<p>IoC中的control是一个含义非常宽泛的词语，维基百科给出的解释是 <a href="https://en.wikipedia.org/wiki/Control_flow">Control flow</a>，我觉得这个解释是比较狭隘的，从广义而言，它可以指代：</p>
+<p>1) flow of control</p>
+<p>2) dependency的注入</p>
+<p>3) 对object lifetime的管理</p>
+<p>4) event和event handler之间的映射</p>
+<p>.....</p>
+<p>显然这些都是control，如果我们从这个宽泛的角度出发来理解的话，就会发现软件工程领域的很多内容都可以归入到IoC中。原本这些control是由programmer来进行实现，而IoC则启发我们：这些control应该由framework来进行实现，即将**控制权**移交给**framework**；此处的framework的含义也是非常宽泛的，它可以是:</p>
+<p>1、类似于spring的container</p>
+<p>2、类似于reference counting这样的逻辑</p>
+<p>显然IOC可以简单地总结为：</p>
+<p>非IOC: 由programmer来实现control</p>
+<p>IOC: 由framework来实现control</p>
+<h3 id="examples">Examples</h3>
+<p>相对于manual memory management而言，GC是一种IoC: 由GC来管理object的lifetime;</p>
+<p>相对于row pointer而言，smart pointer是一种IoC：<code>shared_ptr</code>由reference count来管理object的lifetime，<code>unique_ptr</code>则是scope;</p>
+<p>DI(dependence injection)是一种IoC，由frameworker来管理dependence关系;</p>
+<p>Event-driven model是一种IoC，由framework来管理event和event handler之间的映射关系，参见<code>Software-design\Architecture\Event-driven-model</code>;</p>
+<h2 id="ioc_1">IoC的优势/价值</h2>
+<p>framework实现了原本由programmer来实现的control，这样就减轻了用户的负担；这样做的优势还有很多，比如:</p>
+<p>1) decouple</p>
+<p>......</p>
+<h2 id="todo#ioc">TODO: IoC的实现方式</h2>
+<p>在维基百科<a href="https://en.wikipedia.org/wiki/Inversion_of_control">Inversion of control</a>中谈到了这个问题。</p>
+<h2 id="martinfowler#inversion#of#control#containers#and#the#dependency#injection#pattern">martinfowler <a href="https://martinfowler.com/articles/injection.html">Inversion of Control Containers and the Dependency Injection pattern</a></h2>
+<blockquote>
+<p>NOTE: 这篇文章的英文原文是比较不好理解的，好在它提供了中文版，翻译质量还可以。中文版链接：<a href="https://insights.thoughtworks.cn/injection/">https://insights.thoughtworks.cn/injection/</a></p>
+</blockquote>
+<p>A number of frameworks have taken a stab at this problem, and several are branching out to provide a general capability to assemble components from different layers. These are often referred to as lightweight containers, examples include <a href="http://picocontainer.com/">PicoContainer</a>, and <a href="http://www.springsource.org/">Spring</a>.</p>
+<p>Underlying these containers are a number of interesting <strong>design principles</strong>, things that go beyond both these specific containers and indeed the Java platform. Here I want to start exploring some of these principles. The examples I use are in Java, but like most of my writing the principles are equally applicable to other OO environments, particularly .NET.</p>
+<blockquote>
+<p>NOTE: 作者这段话的意思是：这些container、Java platform所采用的**design principles**，不仅仅局限于它们，它们同样适用于其他 的OO environment。</p>
+</blockquote>
+<h3 id="components#and#services">Components and Services</h3>
+<p>I use <strong>component</strong> to mean a glob of software that's intended to be used, without change, by an application that is out of the control of the writers of the component. By 'without change' I mean that the using application doesn't change the source code of the components, although they may alter the component's behavior by extending it in ways allowed by the component writers.</p>
+<p>A <strong>service</strong> is similar to a <strong>component</strong> in that it's used by foreign applications. The main difference is that I expect a component to be used <strong>locally</strong> (think jar file, assembly, dll, or a source import). A service will be used <strong>remotely</strong> through some remote interface, either synchronous or asynchronous (eg web service, messaging system, RPC, or socket.)</p>
+<p>I mostly use <strong>service</strong> in this article, but much of the same logic can be applied to <strong>local components</strong> too. Indeed often you need some kind of <strong>local component framework</strong> to easily access a <strong>remote service</strong>. But writing "component or service" is tiring to read and write, and services are much more fashionable at the moment.</p>
+<h3 id="a#naive#example">A Naive Example</h3>
+<p>In this example I'm writing a component that provides a list of movies directed by a particular director. This stunningly useful function is implemented by a single method.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MovieLister</span><span class="p">...</span> 
+<span class="kd">public</span> <span class="n">Movie</span><span class="o">[]</span> <span class="nf">moviesDirectedBy</span><span class="p">(</span><span class="n">String</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">List</span> <span class="n">allMovies</span> <span class="o">=</span> <span class="n">finder</span><span class="p">.</span><span class="na">findAll</span><span class="p">();</span>
+      <span class="k">for</span> <span class="p">(</span><span class="n">Iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">allMovies</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span> <span class="n">it</span><span class="p">.</span><span class="na">hasNext</span><span class="p">();)</span> <span class="p">{</span>
+          <span class="n">Movie</span> <span class="n">movie</span> <span class="o">=</span> <span class="p">(</span><span class="n">Movie</span><span class="p">)</span> <span class="n">it</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+          <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">movie</span><span class="p">.</span><span class="na">getDirector</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">arg</span><span class="p">))</span> <span class="n">it</span><span class="p">.</span><span class="na">remove</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="p">(</span><span class="n">Movie</span><span class="o">[]</span><span class="p">)</span> <span class="n">allMovies</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span> <span class="n">Movie</span><span class="o">[</span><span class="n">allMovies</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">]</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>The implementation of this function is naive in the extreme, it asks a <strong>finder object</strong> (which we'll get to in a moment) to return every film it knows about. Then it just hunts through this list to return those directed by a particular director. This particular piece of naivety I'm not going to fix, since it's just the scaffolding（脚手架） for the real point of this article.</p>
+<p>The real point of this article is this <strong>finder object</strong>, or particularly how we connect the <strong>lister object</strong> with a particular <strong>finder object</strong>. The reason why this is interesting is that I want my wonderful <code>moviesDirectedBy</code> method to be completely independent of how all the movies are being stored. So all the method does is refer to a <strong>finder</strong>, and all that <strong>finder</strong> does is know how to respond to the <code>findAll</code> method. I can bring this out by defining an interface for the <strong>finder</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MovieFinder</span> <span class="p">{</span>
+    <span class="n">List</span> <span class="nf">findAll</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Now all of this is very well decoupled, but at some point I have to come up with a concrete class to actually come up with the movies. In this case I put the code for this in the constructor of my lister class.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MovieLister</span><span class="p">...</span>
+
+  <span class="kd">private</span> <span class="n">MovieFinder</span> <span class="n">finder</span><span class="p">;</span>
+  <span class="kd">public</span> <span class="nf">MovieLister</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">finder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ColonDelimitedMovieFinder</span><span class="p">(</span><span class="s">&quot;movies1.txt&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>The name of the implementation class comes from the fact that I'm getting my list from a colon（冒号） delimited text file. I'll spare you the details, after all the point is just that there's some implementation.</p>
+<p>Now if I'm using this class for just myself, this is all fine and dandy（极好的）. But what happens when my friends are overwhelmed（被打倒） by a desire for this wonderful functionality and would like a copy of my program? If they also store their movie listings in a colon delimited text file called "movies1.txt" then everything is wonderful. If they have a different name for their movies file, then it's easy to put the name of the file in a properties file. But what if they have a completely different form of storing their movie listing: a SQL database, an XML file, a web service, or just another format of text file? In this case we need a different class to grab that data. Now because I've defined a <code>MovieFinder</code> interface, this won't alter my <code>moviesDirectedBy</code> method. But I still need to have some way to get an instance of the right <strong>finder</strong> implementation into place.</p>
+<p><img alt="img" src="naive.gif" /></p>
+<p>Figure 1: The dependencies using a simple creation in the lister class</p>
+<p><a href="https://martinfowler.com/articles/injection.html#naive.gif">Figure 1</a> shows the <strong>dependencies</strong> for this situation. The <code>MovieLister</code> class is dependent on both the <code>MovieFinder</code> interface and upon the implementation. We would prefer it if it were only dependent on the interface, but then how do we make an instance to work with?</p>
+<h4 id="plugin">plugin</h4>
+<p>In my book <a href="https://martinfowler.com/books/eaa.html">P of EAA</a>, we described this situation as a <a href="https://martinfowler.com/eaaCatalog/plugin.html">Plugin</a>. The implementation class for the <strong>finder</strong> isn't linked into the program at compile time, since I don't know what my friends are going to use. Instead we want my <strong>lister</strong> to work with any implementation, and for that implementation to be plugged in at some later point, out of my hands. The problem is how can I make that link so that my lister class is ignorant of the implementation class, but can still talk to an instance to do its work.</p>
+<p>Expanding this into a real system, we might have dozens of such services and components. In each case we can abstract our use of these <strong>components</strong> by talking to them through an <strong>interface</strong> (and using an adapter if the <strong>component</strong> isn't designed with an interface in mind). But if we wish to deploy this system in different ways, we need to use <strong>plugins</strong> to handle the interaction with these services so we can use different implementations in different deployments.</p>
+<p>So the core problem is how do we assemble these plugins into an application? This is one of the main problems that this new breed of lightweight containers face, and universally they all do it using <strong>Inversion of Control</strong>.</p>
+<h3 id="inversion#of#control_1">Inversion of Control</h3>
+<p>The question is: "what aspect of control are they inverting?" When I first ran into <strong>inversion of control</strong>, it was in the main control of a user interface. Early user interfaces were controlled by the application program. You would have a sequence of commands like "Enter name", "enter address"; your program would drive the prompts and pick up a response to each one. With graphical (or even screen based) UIs the UI <strong>framework</strong> would contain this <strong>main loop</strong> and your program instead provided <strong>event handlers</strong> for the various fields on the screen. The <strong>main control</strong> of the program was inverted, moved away from you to the <strong>framework</strong>.</p>
+<blockquote>
+<p>NOTE: 在UI framework中，被invert的control是main control。在普通的application program中，main control是由application program控制；在UI framework中，main control由UI framework控制。</p>
+</blockquote>
+<p>For this new breed of containers the <strong>inversion</strong> is about how they lookup a <strong>plugin implementation</strong>. In my naive example the <strong>lister</strong> looked up the <strong>finder implementation</strong> by directly instantiating it. This stops the <strong>finder</strong> from being a plugin. The approach that these containers use is to ensure that any user of a plugin follows some convention that allows a separate assembler module to inject the implementation into the <strong>lister</strong>.</p>
+<p>As a result I think we need a more specific name for this pattern. <strong>Inversion of Control</strong> is too generic a term, and thus people find it confusing. As a result with a lot of discussion with various IoC advocates we settled on the name <em>Dependency Injection</em>.</p>
+<blockquote>
+<p>NOTE：在DI中，被invert的是how to lookup dependency。在普通的application program中，dependency是由application program控制；在DI中，dependency是有injector来进行inject。</p>
+</blockquote>
+<p>I'm going to start by talking about the various forms of <strong>dependency injection</strong>, but I'll point out now that that's not the only way of removing the <strong>dependency</strong> from the application class to the <strong>plugin implementation</strong>. The other pattern you can use to do this is <strong>Service Locator</strong>, and I'll discuss that after I'm done with explaining <strong>Dependency Injection</strong>.</p>
+<h3 id="forms#of#dependency#injection">Forms of Dependency Injection</h3>
+<p>The basic idea of the Dependency Injection is to have a separate object, an assembler, that populates a field in the lister class with an appropriate implementation for the finder interface, resulting in a dependency diagram along the lines of <a href="https://martinfowler.com/articles/injection.html#injector.gif">Figure 2</a></p>
+<p><img alt="" src="injector.gif" /></p>
+<p>Figure 2: The dependencies for a Dependency Injector</p>
+<p>There are three main styles of <strong>dependency injection</strong>. The names I'm using for them are <strong>Constructor Injection</strong>, <strong>Setter Injection</strong>, and <strong>Interface Injection</strong>. If you read about this stuff in the current discussions about <strong>Inversion of Control</strong> you'll hear these referred to as type 1 IoC (interface injection), type 2 IoC (setter injection) and type 3 IoC (constructor injection). I find numeric names rather hard to remember, which is why I've used the names I have here.</p>
+<h4 id="constructor#injection#with#picocontainer">Constructor Injection with PicoContainer</h4>
+<h4 id="setter#injection#with#spring">Setter Injection with Spring</h4>
+<p>The <a href="http://www.springsource.org/">Spring framework</a> is a wide ranging framework for enterprise Java development. It includes abstraction layers for transactions, persistence frameworks, web application development and JDBC. Like PicoContainer it supports both constructor and setter injection, but its developers tend to prefer setter injection - which makes it an appropriate choice for this example.</p>
+<h4 id="interface#injection">Interface Injection</h4>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="wikipedia-Inversion-of-control/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              wikipedia-Inversion-of-control
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

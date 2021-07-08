@@ -1,291 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://dengking.github.io/software-engineering/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://dengking.github.io/software-engineering/Software-engineering/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-quality/Software-quality/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/Software-quality/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://dengking.github.io/software-engineering/Software-quality/Reusability/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-requirements/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/Software-quality/Readability/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/0Requirements/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/Abstraction/Abstraction-in-software-design/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/Control-theory/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/Abstraction/Abstraction-in-software-design/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/Control-theory/Inversion-of-control/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/Control-theory/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/Control-theory/Inversion-of-control/wikipedia-Inversion-of-control/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/Control-theory/Inversion-of-control/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/Control-theory/Inversion-of-control/tutorialsteacher-Inversion-of-Control/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/Control-theory/Inversion-of-control/wikipedia-Inversion-of-control/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/Control-theory/TODO-Control-dependency/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/Control-theory/Inversion-of-control/tutorialsteacher-Inversion-of-Control/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/Information-hiding/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/Control-theory/TODO-Control-dependency/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Principle/Information-hiding/Transparency/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/Information-hiding/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Commonality-and-variability-analysis/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Principle/Information-hiding/Transparency/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Decompose-and-assemble/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Commonality-and-variability-analysis/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Decompose-and-assemble/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Plugin-architecture/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Plugin-architecture/Component-based-software-engineering/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Plugin-architecture/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Monolithic-and-micro/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Plugin-architecture/Component-based-software-engineering/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Middleware/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Monolithic-and-micro/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Middleware/Message-oriented-middleware/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Middleware/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Service-oriented-architecture/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Middleware/Message-oriented-middleware/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Service-oriented-architecture/Microservice/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Service-oriented-architecture/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Task-model/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Service-oriented-architecture/Microservice/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Task-model/Schedule/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Task-model/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Task-model/Schedule/Priority-inversion/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Task-model/Schedule/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Task-model/Schedule/Priority-inversion/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/Abstraction-and-architecture-and-layer/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Multilayered-architecture/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Architecture-pattern/Multilayered-architecture/Book-code-reading/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Multilayered-architecture/Abstraction-and-architecture-and-layer/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Pool/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Architecture-pattern/Multilayered-architecture/Book-code-reading/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Pool/Prefork-process-pool/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Pool/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Pool/Memory-pool/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Pool/Prefork-process-pool/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Pool/Memory-pool/C%2B%2BMemory-Pool-CTable/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Pool/Memory-pool/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Design-pattern/Pool/Connection-pool/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Pool/Memory-pool/C%2B%2BMemory-Pool-CTable/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Experience/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Design-pattern/Pool/Connection-pool/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-design/Unified-Modeling-Language/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/Experience/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/1Design/UML/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-development-process/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-development-process/Test-driven-development/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/Development-process/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-development-process/TODO-Behavior-driven-development/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/Development-process/TDD%26BDD/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-configuration-management/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/Development-process/TDD%26BDD/TDD/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-build/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/Development-process/TDD%26BDD/BDD/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/Development-process/TDD%26BDD/BDD/software-Cucumber/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Test-automation/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/Configuration-management/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Test-automation/Automated-test-framework/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/Software-build/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Test-automation/Test-Anything-Protocol/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/QA/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Unit-testing/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/2Development/%E8%B4%A8%E9%87%8F%E6%8F%90%E5%8D%87/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Unit-testing/Test-oracle/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/3Distribution/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Unit-testing/xUnit/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Unit-testing/List-of-unit-testing-frameworks/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Unit-testing/Gherkin-domain-specific-language/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Smoke-testing/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Fuzz-testing/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Fuzz-testing/google-oss-fuzz/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Heisenbug/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-testing/Code-coverage/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-development/Software-quality-assurance/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-distribution/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Software-distribution/Software-release-life-cycle/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/3Distribution/Software-release-life-cycle/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://dengking.github.io/software-engineering/TODO-Software-analysis/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Performance-optimization/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/DevOps/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://dengking.github.io/software-engineering/Performance-optimization/Benchmark/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Performance-optimization/Memory/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Performance-optimization/Memory/Small-Buffer-Optimization/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Performance-optimization/Memory/Small-Buffer-Optimization/riptutorial-C%2B%2BSmall-Object-Optimization/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Performance-optimization/Memory/We-Know-Where-You-Live-optimization/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Performance-optimization/Bound/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Experience/12factor/</loc>
-     <lastmod>2021-06-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://dengking.github.io/software-engineering/Experience/Experience/</loc>
-     <lastmod>2021-06-19</lastmod>
+     <loc>https://dengking.github.io/software-engineering/DevOps/12factor/</loc>
+     <lastmod>2021-07-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

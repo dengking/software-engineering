@@ -1,8 +1,0 @@
-nav:
-    - Introduction: index.md
-    - Software-development-process: Software-development-process
-    - Software-configuration-management: Software-configuration-management
-    - Software-build: Software-build
-    - Software-testing: Software-testing
-    - Software-quality-assurance: Software-quality-assurance
-    
