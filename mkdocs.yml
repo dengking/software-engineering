@@ -73,7 +73,8 @@ nav:
         - Introduction: 1Design/Design-pattern/Architecture-pattern/Monolithic-and-micro/index.md
       - Middleware:
         - Introduction: 1Design/Design-pattern/Architecture-pattern/Middleware/index.md
-        - Message-oriented-middleware: 1Design/Design-pattern/Architecture-pattern/Middleware/Message-oriented-middleware.md
+        - Message-oriented-middleware:
+          - Introduction: 1Design/Design-pattern/Architecture-pattern/Middleware/Message-oriented-middleware/index.md
       - Service-oriented-architecture:
         - Introduction: 1Design/Design-pattern/Architecture-pattern/Service-oriented-architecture/index.md
         - Microservice:
