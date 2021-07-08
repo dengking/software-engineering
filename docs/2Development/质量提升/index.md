@@ -1,7 +1,5 @@
 # 如何系统地提升软件质量
 
-> 邓开 2021-04-30
-
 如何快速地交付高质量的软件？如何系统的提升软件质量？考虑:
 
 1、开发人员素质
@@ -374,7 +372,6 @@ zhihu [实际软件工程中是否真的需要100%代码覆盖率（code coverag
 #### wikipedia [xUnit](https://en.wikipedia.org/wiki/XUnit) # xUnit architecture
 
 > NOTE: architecture这对于我们掌握unit testing framework非常重要；xUnit的architecture是非常经典的。
->
 
 All xUnit frameworks share the following basic component architecture, with some varied implementation details.[[1\]](https://en.wikipedia.org/wiki/XUnit#cite_note-1)
 
