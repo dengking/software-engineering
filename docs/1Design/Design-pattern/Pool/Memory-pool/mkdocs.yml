@@ -1,3 +1,4 @@
 nav:
     - Introduction: index.md
-    - C++Memory-Pool-CTable: C++Memory-Pool-CTable.md
+    - C++Memory-Pool-CTable: C++Memory-Pool-CTable
+    

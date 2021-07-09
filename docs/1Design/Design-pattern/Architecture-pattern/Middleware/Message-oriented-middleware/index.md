@@ -48,8 +48,12 @@ wikipedia [Tuxedo (software)](https://en.wikipedia.org/wiki/Tuxedo_(software))
 
 ## 实现共性
 
-1、application protocol
+一、application protocol
 
-2、concurrency model
+二、concurrency model
 
-3、code generator
+三、code generator
+
+四、路由、event dispatch、event handler
+
+event dispatch最常见的是使用hash map来存储PK和handler之间的映射关系
