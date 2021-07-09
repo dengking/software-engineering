@@ -96,7 +96,8 @@ nav:
         - Introduction: 1Design/Design-pattern/Pool/Prefork-process-pool/index.md
       - Memory-pool:
         - Introduction: 1Design/Design-pattern/Pool/Memory-pool/index.md
-        - C++Memory-Pool-CTable: 1Design/Design-pattern/Pool/Memory-pool/C++Memory-Pool-CTable.md
+        - C++Memory-Pool-CTable:
+          - Introduction: 1Design/Design-pattern/Pool/Memory-pool/C++Memory-Pool-CTable/index.md
       - Connection-pool:
         - Introduction: 1Design/Design-pattern/Pool/Connection-pool/index.md
   - Experience: 1Design/Experience.md
