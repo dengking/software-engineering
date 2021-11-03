@@ -2,7 +2,7 @@
 
 # tutorialsteacher [Inversion of Control](https://www.tutorialsteacher.com/ioc/inversion-of-control)
 
-![](D:/github/dengking/programming-language-theory/programming-language/docs/Theory/Design-pattern/OOP-design-pattern/Goal-and-principle/SOLID/Inversion-of-control/ioc-step1.png)
+![](./ioc-step1.png)
 
 > NOTE: 上面描述了实现IoC的多种方式，它们是递进关系。
 
@@ -90,7 +90,7 @@ Let's understand this using a more practical example.
 
 In an object-oriented design, classes should be designed in a loosely coupled way. Loosely coupled means changes in one class should not force other classes to change, so the whole application can become **maintainable** and **extensible**. Let's understand this by using typical n-tier architecture as depicted by the following figure:
 
-![](D:/github/dengking/programming-language-theory/programming-language/docs/Theory/Design-pattern/OOP-design-pattern/Goal-and-principle/SOLID/Inversion-of-control/demo-architecture.png)
+![](./demo-architecture.png)
 
 In the typical n-tier architecture, the User Interface (UI) uses **Service layer** to retrieve or save data. The **Service layer** uses the `BusinessLogic` class to apply business rules on the data. The `BusinessLogic` class depends on the `DataAccess` class which retrieves or saves the data to the underlying database. This is simple n-tier architecture design. Let's focus on the `BusinessLogic` and `DataAccess` classes to understand IoC.
 
@@ -143,7 +143,7 @@ To solve all of the above problems and get a loosely coupled design, we can use 
 
 The following pattern (but not limited) implements the IoC principle.
 
-![](D:/github/dengking/programming-language-theory/programming-language/docs/Theory/Design-pattern/OOP-design-pattern/Goal-and-principle/SOLID/Inversion-of-control/ioc-patterns.png)
+![](./ioc-patterns.png)
 
 
 

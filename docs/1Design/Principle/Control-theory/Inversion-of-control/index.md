@@ -10,21 +10,23 @@
 
 关于它的第一个问题就是“what aspect of control are they inverting”，即“反转的是什么控制”，这个问题需要结合具体的例子来进行回答，本章基于如下文章：
 
-- 入门读物：martinfowler [Inversion of Control Containers and the Dependency Injection pattern](https://martinfowler.com/articles/injection.html)
-- 总结：维基百科[Inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)
-- 总结：stackoverflow [What is Inversion of Control?](https://stackoverflow.com/questions/3058/what-is-inversion-of-control)
+1、入门读物：martinfowler [Inversion of Control Containers and the Dependency Injection pattern](https://martinfowler.com/articles/injection.html)
+
+2、总结：维基百科[Inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)
+
+3、总结：stackoverflow [What is Inversion of Control?](https://stackoverflow.com/questions/3058/what-is-inversion-of-control)
 
 
 
 IoC中的control是一个含义非常宽泛的词语，维基百科给出的解释是 [Control flow](https://en.wikipedia.org/wiki/Control_flow)，我觉得这个解释是比较狭隘的，从广义而言，它可以指代：
 
-1) flow of control
+1、flow of control
 
-2) dependency的注入
+2、dependency的注入
 
-3) 对object lifetime的管理
+3、对object lifetime的管理
 
-4) event和event handler之间的映射
+4、event和event handler之间的映射
 
 .....
 
@@ -190,5 +192,4 @@ The [Spring framework](http://www.springsource.org/) is a wide ranging framework
 
 
 #### Interface Injection
-
 
