@@ -48,9 +48,9 @@ control是一个非常抽象的、宽泛的概念，我是在学习[Inversion of
 
 对于未知的、无序的、不可靠的，我们不可依赖于，它们都是uncomputational的，为了make it computational，我们要进行显式的、可靠的控制(take control)
 
-1) 要么IOC，将控制权交给framework，由它来进行控制;
+1、要么IOC，将控制权交给framework，由它来进行控制;
 
-2) 要么由programmer主动take control，加入ordering，从而make it computational;
+2、要么由programmer主动take control，加入ordering，从而make it computational;
 
 ### Ordering
 
