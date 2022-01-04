@@ -4,7 +4,7 @@
 
 
 
-## 维基百科[Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+## wikipedia [Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 In [software engineering](https://en.wikipedia.org/wiki/Software_engineering), a **software design pattern** is a general, [reusable](https://en.wikipedia.org/wiki/Reusability) solution to a commonly occurring problem within a given context in [software design](https://en.wikipedia.org/wiki/Software_design). It is not a finished design that can be transformed directly into [source](https://en.wikipedia.org/wiki/Source_code) or [machine code](https://en.wikipedia.org/wiki/Machine_code). It is a description or template for how to solve a problem that can be used in many different situations. Design patterns are formalized [best practices](https://en.wikipedia.org/wiki/Best_practice) that the programmer can use to solve common problems when designing an application or system.
 
