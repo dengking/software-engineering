@@ -4,26 +4,50 @@ As you may remember from [Getting Started](https://git-scm.com/book/en/v2/ch00/c
 
 > NOTE: 
 >
-> 使用snapshot是git的原理
+> 一、使用snapshot是git的原理，后面会介绍git的实现细节。
 
 When you make a commit, Git stores a **commit object** that contains a pointer to the **snapshot** of the content you staged. This object also contains the author’s name and email address, the message that you typed, and pointers to the commit or commits that directly came before this commit (its parent or parents): zero parents for the initial commit, one parent for a normal commit, and multiple parents for a commit that results from a merge of two or more branches.
 
 > NOTE: 
 >
 > 一、这些commit object现成了一个chain，其实和blockchain是非常类似的
+>
+> 二、git commit->commit object： 
+>
+> 1、"a pointer to the **snapshot** of the content you staged"
+>
+> 2、"author’s name"
+>
+> 3、"email address"
+>
+> 4、"the message that you typed"
+>
+> 5、pointers to parent commit
 
 To visualize this, let’s assume that you have a directory containing three files, and you stage them all and commit. Staging the files computes a checksum for each one (the SHA-1 hash we mentioned in [Getting Started](https://git-scm.com/book/en/v2/ch00/ch01-getting-started)), stores that version of the file in the Git repository (Git refers to them as *blobs*), and adds that checksum to the staging area:
 
-```console
-$ git add README test.rb LICENSE
-$ git commit -m 'The initial commit of my project'
+> NOTE: 
+>
+> 一、关于"blob"，参见下面的"Figure 9. A commit and its tree"，git的"blob"是和file对应的
+>
+> 二、git add->blob
+
+```shell
+git add README test.rb LICENSE
+git commit -m 'The initial commit of my project'
 ```
 
 When you create the commit by running `git commit`, Git checksums each **subdirectory** (in this case, just the root project directory) and stores them as a **tree object** in the Git repository. Git then creates a commit object that has the metadata and a pointer to the **root project tree** so it can re-create that **snapshot** when needed.
 
-> NOTE: 目录结构（参见[Directory structure](https://en.wikipedia.org/wiki/Directory_structure)）是树形结构（参见[Tree structure](https://en.wikipedia.org/wiki/Tree_structure)），所以整个项目的目录结构是可以使用tree来进行表示的，上面这段话中的**root project tree**其实所指的就是表示整个项目的tree，文件使用blob来进行表示（叶子节点）。其实这就是git中snapshot的实现方式的思路，结合下面的图来看按的话，下图中蓝色框和黄色框所组成的部分就是tree，也就是snapshot。可以看到，git的snapshot包含了整个项目文件（没有add的不考虑）。
+> NOTE: 
+>
+> 一、目录结构（参见[Directory structure](https://en.wikipedia.org/wiki/Directory_structure)）是树形结构（参见[Tree structure](https://en.wikipedia.org/wiki/Tree_structure)），所以整个项目的目录结构是可以使用tree来进行表示的，上面这段话中的**root project tree**其实所指的就是表示整个项目的tree，文件使用blob来进行表示（叶子节点）。其实这就是git中snapshot的实现方式的思路，结合下面的图来看按的话，下图中蓝色框和黄色框所组成的部分就是tree，也就是snapshot。可以看到，git的snapshot包含了整个项目文件（没有add的不考虑）。
+>
+> 简而言之: 上述tree object其实就是snapshot
 
 Your Git repository now contains five objects: three *blobs* (each representing the contents of one of the three files), one *tree* that lists the contents of the directory and specifies which file names are stored as which blobs, and one *commit* with the pointer to that root tree and all the commit metadata.
+
+
 
 ![A commit and its tree.](https://git-scm.com/book/en/v2/images/commit-and-tree.png)
 
@@ -37,7 +61,7 @@ Figure 10. Commits and their parents
 
 A branch in Git is simply a lightweight movable pointer to one of these **commits**. The default branch name in Git is `master`. As you start making commits, you’re given a `master` branch that points to the last commit you made. Every time you commit, the `master` branch pointer moves forward automatically.
 
-> NOTE: The “master” branch in Git is not a special branch. It is exactly like any other branch. The only reason nearly every repository has one is that the `git init` command creates it by default and most people don’t bother to change it.
+> The “master” branch in Git is not a special branch. It is exactly like any other branch. The only reason nearly every repository has one is that the `git init` command creates it by default and most people don’t bother to change it.
 
 ![A branch and its commit history.](https://git-scm.com/book/en/v2/images/branch-and-history.png)
 
@@ -47,8 +71,8 @@ Figure 11. A branch and its commit history
 
 What happens when you create a new branch? Well, doing so creates a new pointer for you to move around. Let’s say you want to create a new branch called `testing`. You do this with the `git branch` command:
 
-```console
-$ git branch testing
+```shell
+git branch testing
 ```
 
 This creates a new pointer to the same commit you’re currently on.
@@ -65,7 +89,7 @@ Figure 13. HEAD pointing to a branch
 
 You can easily see this by running a simple `git log` command that shows you where the branch pointers are pointing. This option is called `--decorate`.
 
-```console
+```shell
 $ git log --oneline --decorate
 f30ab (HEAD -> master, testing) add feature #32 - ability to add new formats to the central interface
 34ac2 Fixed bug #1328 - stack overflow under certain conditions
@@ -80,7 +104,7 @@ You can see the `master` and `testing` branches that are right there next to the
 
 To switch to an existing branch, you run the `git checkout` command. Let’s switch to the new `testing` branch:
 
-```console
+```shell
 $ git checkout testing
 ```
 
@@ -92,7 +116,7 @@ Figure 14. HEAD points to the current branch
 
 What is the significance of that? Well, let’s do another commit:
 
-```console
+```shell
 $ vim test.rb
 $ git commit -a -m 'made a change'
 ```
@@ -103,7 +127,7 @@ Figure 15. The HEAD branch moves forward when a commit is made
 
 This is interesting, because now your `testing` branch has moved forward, but your `master` branch still points to the commit you were on when you ran `git checkout` to switch branches. Let’s switch back to the `master` branch:
 
-```console
+```shell
 $ git checkout master
 ```
 
@@ -117,7 +141,7 @@ That command did two things. It moved the **HEAD pointer** back to point to the 
 
 Let’s make a few changes and commit again:
 
-```console
+```shell
 $ vim test.rb
 $ git commit -a -m 'made other changes'
 ```
@@ -130,7 +154,7 @@ Figure 17. Divergent history
 
 You can also see this easily with the `git log` command. If you run `git log --oneline --decorate --graph --all` it will print out the history of your commits, showing where your branch pointers are and how your history has diverged.
 
-```console
+```shell
 $ git log --oneline --decorate --graph --all
 * c2b9e (HEAD, master) made other changes
 | * 87ab2 (testing) made a change
