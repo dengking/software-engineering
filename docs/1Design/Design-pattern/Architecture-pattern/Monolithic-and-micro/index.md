@@ -6,6 +6,8 @@ TODO: 将在[The Structure of a Compiler](https://dengking.github.io/compiler-pr
 
 ## Monolithic VS micro
 
+"monolithic"的比较好的翻译是"单体"。
+
 [Monolithic Architecture and Microservices Concepts- Cloud Computing](https://www.howtechyy.com/2019/07/monolithic-architecture-vs-microservices-concepts.html)
 
 
