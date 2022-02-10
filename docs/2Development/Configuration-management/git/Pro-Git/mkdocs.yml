@@ -3,4 +3,5 @@ nav:
     - 2-Git-Basics: 2-Git-Basics
     - 3-Git-Branching: 3-Git-Branching
     - 4-Git-on-the-Server: 4-Git-on-the-Server
+    - 10-Git-Internals: 10-Git-Internals
     
