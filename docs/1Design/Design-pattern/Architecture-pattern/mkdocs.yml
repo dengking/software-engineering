@@ -1,7 +1,7 @@
 nav:
     - Introduction: index.md
     - Plugin-architecture: Plugin-architecture
-    - Monolithic-and-micro: Monolithic-and-micro
+    - Monolithic-VS-micro: Monolithic-VS-micro
     - Middleware: Middleware
     - Service-oriented-architecture: Service-oriented-architecture
     - Task-model: Task-model

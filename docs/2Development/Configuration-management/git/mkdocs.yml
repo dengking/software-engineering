@@ -1,6 +1,5 @@
 nav:
     - Introduction: index.md
-    - git-cheat-sheet: git-cheat-sheet
     - Reference: Reference
     - Pro-Git: Pro-Git
     - gitflow: gitflow
