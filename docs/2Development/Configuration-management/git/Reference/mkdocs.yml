@@ -1,7 +1,7 @@
 nav:
     - Introduction: index.md
     - git-cheat-sheet: git-cheat-sheet
-    - Patching: Patching
     - git-newline: git-newline    
     - Commands: Commands
+
     

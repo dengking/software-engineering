@@ -1,5 +1,8 @@
 nav:
     - Introduction: index.md
     - git-clone: git-clone
+    - Sharing&updating-project: Sharing&updating-project
+    - Patching: Patching
+    - Merge&rebase: Merge&rebase
     - Plumbing-Commands: Plumbing-Commands
     

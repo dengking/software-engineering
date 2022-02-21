@@ -1,7 +1,8 @@
 nav:
     - Introduction: index.md
-    - Reference: Reference
+    - Learning-git-branch: Learning-git-branch
     - Pro-Git: Pro-Git
-    - gitflow: gitflow
+    - Reference: Reference
+    - Workflow: Workflow
     - Errors: Errors    
-    
+    - Sourcetree: Sourcetree 
