@@ -3,6 +3,8 @@ nav:
     - git-clone: git-clone
     - Sharing&updating-project: Sharing&updating-project
     - Patching: Patching
-    - Merge&rebase: Merge&rebase
+    - git-merge&rebase: git-merge&rebase
     - Plumbing-Commands: Plumbing-Commands
+    - git-current-branch: git-current-branch
+    - git-undo: git-undo
     
