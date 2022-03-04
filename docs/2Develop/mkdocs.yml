@@ -1,7 +1,7 @@
 nav:
     - Introduction: index.md
     - Development-process: Development-process
-    - Configuration-management: Configuration-management
+    - Config-manage: Config-manage
     - Software-build: Software-build
     - QA: QA
     - Testing: Testing

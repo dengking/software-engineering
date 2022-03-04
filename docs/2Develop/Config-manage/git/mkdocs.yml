@@ -1,6 +1,7 @@
 nav:
     - Introduction: index.md
     - Learning-git-branch: Learning-git-branch
+    - git-mechanism: git-mechanism
     - Pro-Git: Pro-Git
     - Reference: Reference
     - Workflow: Workflow
