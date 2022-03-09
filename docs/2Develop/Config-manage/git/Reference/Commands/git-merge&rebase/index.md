@@ -1,6 +1,16 @@
 # git merge and rebase
 
+## 简单粗暴的merge方式
 
+首先尝试的是`git rebase`，但是rebase失败了，后来请教了同事，他的思路是：
+
+reset
+
+stash
+
+merge
+
+apply （replay）
 
 ```shell
  88  git rebase --abort # undo rebase

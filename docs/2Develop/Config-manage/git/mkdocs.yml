@@ -4,6 +4,8 @@ nav:
     - git-mechanism: git-mechanism
     - Pro-Git: Pro-Git
     - Reference: Reference
+    - Submodule: Submodule
+    - 大小写: 大小写
     - Workflow: Workflow
     - Errors: Errors    
     - Sourcetree: Sourcetree
