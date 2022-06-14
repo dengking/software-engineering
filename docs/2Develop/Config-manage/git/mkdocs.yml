@@ -5,7 +5,9 @@ nav:
     - Pro-Git: Pro-Git
     - Reference: Reference
     - Submodule: Submodule
+    - Delete-commit: Delete-commit
     - 大小写: 大小写
     - Workflow: Workflow
     - Errors: Errors    
     - Sourcetree: Sourcetree
+    
