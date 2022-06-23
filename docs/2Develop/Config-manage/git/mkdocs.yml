@@ -1,13 +1,15 @@
 nav:
     - Introduction: index.md
     - Learning-git-branch: Learning-git-branch
-    - git-mechanism: git-mechanism
+
     - Pro-Git: Pro-Git
     - Reference: Reference
-    - Submodule: Submodule
-    - Delete-commit: Delete-commit
-    - 大小写: 大小写
-    - Workflow: Workflow
-    - Errors: Errors    
+    - git-mechanism: git-mechanism
+    - git-branch: git-branch
+    - git-submodule: git-submodule
+    - git-大小写: git-大小写
+    - git-workflow: git-workflow
+    - git-branch: git-branch
+    - git-errors: git-errors    
     - Sourcetree: Sourcetree
     

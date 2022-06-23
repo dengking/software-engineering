@@ -93,3 +93,27 @@ Starting with [Git v2.8.0](https://github.com/git/git/blob/master/Documentation/
 > ```
 >
 > 
+
+
+
+## git按创建者来统计分支
+
+### stackoverflow [Is there a script to list git branches created by me?](https://stackoverflow.com/questions/36026374/is-there-a-script-to-list-git-branches-created-by-me)
+
+
+
+[A](https://stackoverflow.com/a/36026719/10173843)
+
+```SHELL
+git for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname 
+```
+
+[A](https://stackoverflow.com/a/60037744/10173843)
+
+```SHELL
+git branch -r | xargs -L1 git --no-pager show -s --oneline --author="$(git config user.name)"
+```
+
+
+
+## stackoverflow [Find unmerged Git branches?](https://stackoverflow.com/questions/12276001/find-unmerged-git-branches)
