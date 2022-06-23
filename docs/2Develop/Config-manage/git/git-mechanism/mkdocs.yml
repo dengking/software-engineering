@@ -1,5 +1,7 @@
 nav:
     - Introduction: index.md
+    - git-HEAD: git-HEAD
+    - git-refs: git-refs
     - git-three-tree: git-three-tree
     - git-data-structure: git-data-structure
     
