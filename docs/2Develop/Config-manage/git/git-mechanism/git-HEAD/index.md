@@ -22,7 +22,17 @@ ref: refs/heads/litesdk_develop
 
 如果要深挖，那么这就涉及一个问题: `refs` 是什么？关于此，可以参见stackoverflow [git: difference between "branchname" and "refs/heads/branchname"](https://stackoverflow.com/questions/1526471/git-difference-between-branchname-and-refs-heads-branchname) 。
 
-## [learning git branching](https://learngitbranching.js.org/?locale=en) # *Detach yo' HEAD*
+
+
+
+
+## 素材
+
+### stackoverflow [How to get the current branch name in Git?](https://stackoverflow.com/questions/6245570/how-to-get-the-current-branch-name-in-git)
+
+
+
+## [learning git branching](https://learngitbranching.js.org/?locale=en) # *HEAD*
 
 > NOTE: 
 >
@@ -42,11 +52,24 @@ Normally HEAD points to a branch name (like bugFix). When you commit, the status
 
 ## stackoverflow [What are the git concepts of HEAD, master, origin?](https://stackoverflow.com/questions/8196544/what-are-the-git-concepts-of-head-master-origin)
 
+## *Detach yo' HEA*
+
+[learning git branching](https://learngitbranching.js.org/?locale=en) # *Detach yo' HEA*
 
 
 
+### Recovering from the Git detached HEAD state
 
-## 素材
+#### circleci [Recovering from the Git detached HEAD state](https://circleci.com/blog/git-detached-head-state/)
 
-### stackoverflow [How to get the current branch name in Git?](https://stackoverflow.com/questions/6245570/how-to-get-the-current-branch-name-in-git)
+> NOTE: 
+>
+> 这篇文章非常好
 
+
+
+#### stackoverflow [How do I fix a Git detached head?](https://stackoverflow.com/questions/10228760/how-do-i-fix-a-git-detached-head)
+
+[A](https://stackoverflow.com/a/10229202/10173843)
+
+> NOTE: 这个解释非常好

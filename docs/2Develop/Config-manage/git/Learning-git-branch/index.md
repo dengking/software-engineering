@@ -1,6 +1,6 @@
-# [learning git branching](https://learngitbranching.js.org/?locale=zh_CN)
+# [learning git branching](https://learngitbranching.js.org/?locale=en)
 
-### branch
+## branch
 
 ```shell
 git checkout -b branchname
@@ -9,6 +9,8 @@ git checkout -b branchname
 创建并切换到branch。
 
 
+
+## Moving around in Git
 
 ### HEAD
 
@@ -29,7 +31,7 @@ git checkout C2 # C1是commit hash
 
 （译者注：实际这些命令并不是真的在查看 HEAD 指向，看下一屏就了解了。如果想看 HEAD 指向，可以通过 `cat .git/HEAD` 查看， 如果 HEAD 指向的是一个引用，还可以用 `git symbolic-ref HEAD` 查看它的指向。但是该程序不支持这两个命令）
 
-#### 分离的 HEAD
+### 分离的 HEAD
 
 分离的 HEAD 就是让其指向了某个具体的提交记录而不是分支名。在命令执行之前的状态如下所示：
 
@@ -48,6 +50,10 @@ git checkout C1
 ```
 HEAD -> C1
 ```
+
+> NOTE: 
+>
+> 如果查看`.git/HEAD`，会发现其中的内容已经变成了 `C1`。
 
 ### 相对引用
 

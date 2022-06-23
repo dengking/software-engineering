@@ -2,7 +2,7 @@
 
 "checkout"的本义是 "检出、签出"，关于此，参见baike [checkout（英语单词）](https://baike.baidu.com/item/checkout/52730844?fr=aladdin) 。
 
-##  素材
+## 素材
 
 ### csdn [git checkout 命令详解](https://blog.csdn.net/csflvcxx/article/details/81612336)
 
