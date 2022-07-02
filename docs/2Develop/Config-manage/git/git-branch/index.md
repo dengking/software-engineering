@@ -1,5 +1,7 @@
 # Git Branches
 
+
+
 ## nobledesktop [Git Branches: List, Create, Switch to, Merge, Push, & Delete](https://www.nobledesktop.com/learn/git/git-branches)
 
 ### List All Branches
@@ -117,3 +119,6 @@ git branch -r | xargs -L1 git --no-pager show -s --oneline --author="$(git confi
 
 
 ## stackoverflow [Find unmerged Git branches?](https://stackoverflow.com/questions/12276001/find-unmerged-git-branches)
+
+
+
