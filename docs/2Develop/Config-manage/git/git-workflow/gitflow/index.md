@@ -6,7 +6,9 @@
 
 > NOTE: 
 >
-> 网易采用的就是这种
+> 一、网易采用的就是这种
+>
+> 二、它本质上是branch model
 
 新仓库的 Git 工作流采用 git flow，简单来说 master 分支作为当前**最新稳定**代码分支。新的版本迭代过程中，我们基于 `develop` 开出新的 `feature/*` 分支进行功能开发，当**冒烟测试**稳定后合并至 `develop` 分支。在一个版本所有 `feature/*` 分支都合并到 `develop` 准备**集成测试**时，基于 `develop` 开出 `release/*` 分支（星号代表发布版本号），**回归**完成后合并 `release/*` 到 `develop` 和 `master` 并按版本号创建一个最新的 tag。
 
@@ -69,3 +71,19 @@ The different types of branches we may use are:
 
 
 ## git-tower [Workflows with git-flow](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow)
+
+
+
+## Practice
+
+一、git-tower [Workflows with git-flow](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow)
+
+![](./hotfix.jpg)
+
+```shell
+git checkout Tags/0.3.0 # 必须首先checkout这个tag
+git flow hotfix start 0.3.1
+# 在 hotfix 分支做修改，测试，确认没问题后
+git flow hotfix finish 0.3.1
+```
+
