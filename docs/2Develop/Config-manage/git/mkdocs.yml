@@ -1,7 +1,6 @@
 nav:
     - Introduction: index.md
     - Learning-git-branch: Learning-git-branch
-
     - Pro-Git: Pro-Git
     - Reference: Reference
     - git-mechanism: git-mechanism
@@ -10,6 +9,7 @@ nav:
     - git-大小写: git-大小写
     - git-workflow: git-workflow
     - git-branch: git-branch
-    - git-errors: git-errors    
+    - git-errors: git-errors   
+    - git-tag: git-tag
     - Sourcetree: Sourcetree
     

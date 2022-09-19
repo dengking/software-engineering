@@ -1,5 +1,7 @@
 # gitflow
 
+
+
 ## Git 工作流
 
 > NOTE: 
@@ -14,8 +16,15 @@
 
 对于 git flow 工作流有任何问题请参考以下内容：
 
-- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
-- [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+1、nvie [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+
+> NOTE:
+>
+> 一、git-flow就是由这篇文章的作者 [Vincent Driessen](https://nvie.com/about/) 提出，这是在阅读 [Fork for Windows 1.17](https://fork.dev/blog/posts/forkwin-1.17/) 时，其中有这样的一段话:
+>
+> "Git Flow is a well established workflow for git repositories made popular by [a post by Vincent Driessen](https://nvie.com/posts/a-successful-git-branching-model/). "
+
+2、atlassian [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
 任何打乱 git flow 工作流的行为都可能会造成仓库分支混乱、合并冲突等问题，如您的分支命名方式不是以 git flow 方式创建，将会导致 CI 在编译时无法获取正确的分支、版本等信息。或您开启新的分支并不是以 git flow 规定的方式创建将会导致一系列代码合并错误。
 
@@ -23,3 +32,40 @@
 
 对版本号的管理，我们遵循 [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/)
 
+
+
+## nvie [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+
+> NOTE:
+>
+> 一、git-flow就是由这篇文章的作者 [Vincent Driessen](https://nvie.com/about/) 提出，这是在阅读 [Fork for Windows 1.17](https://fork.dev/blog/posts/forkwin-1.17/) 时，其中有这样的一段话:
+>
+> "Git Flow is a well established workflow for git repositories made popular by [a post by Vincent Driessen](https://nvie.com/posts/a-successful-git-branching-model/). "
+
+I won’t talk about any of the projects’ details, merely about the branching strategy and release management.
+
+![img](https://nvie.com/img/git-model@2x.png)
+
+### The main branches [¶](https://nvie.com/posts/a-successful-git-branching-model/#the-main-branches)
+
+The central repo holds two main branches with an infinite lifetime:
+
+1、`master`
+
+2、`develop`
+
+
+
+### Supporting branches [¶](https://nvie.com/posts/a-successful-git-branching-model/#supporting-branches)
+
+The different types of branches we may use are:
+
+1、Feature branches
+
+2、Release branches
+
+3、Hotfix branches
+
+
+
+## git-tower [Workflows with git-flow](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow)
