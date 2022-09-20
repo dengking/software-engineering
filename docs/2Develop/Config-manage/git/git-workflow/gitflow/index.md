@@ -36,40 +36,6 @@
 
 
 
-## nvie [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
-
-> NOTE:
->
-> 一、git-flow就是由这篇文章的作者 [Vincent Driessen](https://nvie.com/about/) 提出，这是在阅读 [Fork for Windows 1.17](https://fork.dev/blog/posts/forkwin-1.17/) 时，其中有这样的一段话:
->
-> "Git Flow is a well established workflow for git repositories made popular by [a post by Vincent Driessen](https://nvie.com/posts/a-successful-git-branching-model/). "
-
-I won’t talk about any of the projects’ details, merely about the branching strategy and release management.
-
-![img](https://nvie.com/img/git-model@2x.png)
-
-### The main branches [¶](https://nvie.com/posts/a-successful-git-branching-model/#the-main-branches)
-
-The central repo holds two main branches with an infinite lifetime:
-
-1、`master`
-
-2、`develop`
-
-
-
-### Supporting branches [¶](https://nvie.com/posts/a-successful-git-branching-model/#supporting-branches)
-
-The different types of branches we may use are:
-
-1、Feature branches
-
-2、Release branches
-
-3、Hotfix branches
-
-
-
 ## git-tower [Workflows with git-flow](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow)
 
 
