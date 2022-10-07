@@ -2,14 +2,6 @@
 
 在软件公司，一般都会有配管的角色。
 
-## version control 
-
-可以使用的工具：
-
-[git](https://git-scm.com/)
-
-svn
-
 
 
 ## wikipedia [Software configuration management](https://en.wikipedia.org/wiki/Software_configuration_management)
@@ -33,3 +25,10 @@ The goals of SCM are generally:
 - Defect tracking - Making sure every defect has traceability back to the source.
 
 With the introduction of [cloud computing](https://en.wikipedia.org/wiki/Cloud_computing) the purposes of SCM tools have become merged in some cases. The SCM tools themselves have become virtual appliances that can be instantiated as virtual machines and saved with state and version. The tools can model and manage cloud-based virtual resources, including virtual appliances, storage units, and software bundles. The roles and responsibilities of the actors have become merged as well with developers now being able to dynamically instantiate virtual servers and related resources.
+
+
+
+## Version control 
+
+参见对应章节。
+

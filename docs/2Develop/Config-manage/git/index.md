@@ -30,5 +30,7 @@ remote repository一般就是GitHub，显然管理local repository和remote repo
 
 ## 资源
 
-### [Git Cheat Sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf) 
+1、[Git Cheat Sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf) 
+
+2、[bitbucket tutorial](https://www.atlassian.com/git/tutorials)
 
