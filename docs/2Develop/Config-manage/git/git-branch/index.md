@@ -122,3 +122,10 @@ git branch -r | xargs -L1 git --no-pager show -s --oneline --author="$(git confi
 
 
 
+
+
+## git create branch with local changes
+
+[Move Existing, Uncommitted Work to a New Branch in Git](https://www.baeldung.com/git-move-uncommitted-work-to-new-branch#:~:text=Using%20the%20git%20checkout%20Command,changes%20to%20the%20new%20branch.&text=There%20is%20no%20local%20change,can%20see%20in%20the%20output.)
+
+> The `git checkout -b <BranchName>` command will create a new branch and switch to it. Moreover, this command will **leave the current branch as it is and bring all uncommitted changes to the new branch**.

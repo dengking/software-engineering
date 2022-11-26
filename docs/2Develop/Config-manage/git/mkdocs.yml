@@ -12,5 +12,5 @@ nav:
     - git-errors: git-errors   
     - git-tag: git-tag
     - git-blame: git-blame
-    - Sourcetree: Sourcetree
+    - git-tools: git-tools
     
