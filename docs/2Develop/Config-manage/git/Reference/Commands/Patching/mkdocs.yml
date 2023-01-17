@@ -1,5 +1,5 @@
 nav:
     - Introduction: index.md
-    - cherry-pick: cherry-pick
+    - git-cherry-pick: git-cherry-pick
     - git-rebase: git-rebase
     

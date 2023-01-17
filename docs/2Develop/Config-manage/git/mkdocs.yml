@@ -6,11 +6,6 @@ nav:
     - git-mechanism: git-mechanism
     - git-branch: git-branch
     - git-submodule: git-submodule
-    - git-大小写: git-大小写
     - git-workflow: git-workflow
-    - git-branch: git-branch
-    - git-errors: git-errors   
-    - git-tag: git-tag
-    - git-blame: git-blame
     - git-tools: git-tools
     

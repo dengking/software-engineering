@@ -1,9 +1,9 @@
 nav:
     - Introduction: index.md
+    - Branching-and-Merging: Branching-and-Merging
     - git-clone: git-clone
     - Sharing&updating-project: Sharing&updating-project
     - Patching: Patching
-    - git-merge&rebase: git-merge&rebase
     - Plumbing-Commands: Plumbing-Commands
     - git-current-branch: git-current-branch
     - git-undo: git-undo
