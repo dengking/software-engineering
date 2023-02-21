@@ -48,3 +48,20 @@ git cherry-pick starthash..endhash
 ```
 
 Note that the two dots have no spaces separating them from the hash labels. Also, this will not cherry-pick `starthash`, but rather everything after `starthash` up to and including `endhash`. To include `starthash` do `git cherry-pick starthash^..endhash`.
+
+
+
+# git parent
+
+
+
+## stackoverflow [How to find the nearest parent of a Git branch](https://stackoverflow.com/questions/3161204/how-to-find-the-nearest-parent-of-a-git-branch)
+
+
+
+[A](https://stackoverflow.com/a/52025740)
+
+> NOTE:
+>
+> 试了这种方法，可行
+
