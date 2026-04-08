@@ -1,20 +1,10 @@
 # Programming tool
 
-
-
 ## wikipedia [Programming tool](https://en.wikipedia.org/wiki/Programming_tool)
-
-
 
 ## [wikipedia-Unix-programming-tools](https://en.wikipedia.org/wiki/Category:Unix_programming_tools)
 
-
-
-
-
 ## 画图工具
-
-
 
 [excalidraw](https://excalidraw.com/)
 
@@ -28,23 +18,16 @@ matplotlib:
 
 [diagrams](https://www.diagrams.net/) 
 
-
-
 ### flowchart
 
-
-
 [miro](https://miro.com/app/dashboard/)
-
-
 
 ### 画几何的工具
 
 geogebra geometry
 
-
-
 ### [Mermaid](https://mermaid.js.org/)
 
 这是很多都集成的一个工具。
+
 
